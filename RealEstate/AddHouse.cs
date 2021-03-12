@@ -111,7 +111,7 @@ namespace RealEstate
             byte[] one = (byte[])converter.ConvertTo(oneB, typeof(byte[]));
             house.photoone = one;
 
-            Bitmap twoB = new Bitmap(pictureBox3.ImageLocation);
+            Bitmap twoB = new Bitmap(pictureBox2.ImageLocation);
             ImageConverter converter2 = new ImageConverter();
             byte[] two = (byte[])converter2.ConvertTo(twoB, typeof(byte[]));
             house.phototwo = two;

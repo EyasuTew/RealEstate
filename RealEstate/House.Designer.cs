@@ -56,6 +56,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.status = new System.Windows.Forms.Label();
+            this.change1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.change3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -243,6 +248,7 @@
             this.delete.TabIndex = 46;
             this.delete.Text = "delete";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // changestatus
             // 
@@ -252,6 +258,7 @@
             this.changestatus.TabIndex = 47;
             this.changestatus.Text = "Change status";
             this.changestatus.UseVisualStyleBackColor = true;
+            this.changestatus.Click += new System.EventHandler(this.changestatus_Click);
             // 
             // pictureBox3
             // 
@@ -263,6 +270,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(169, 131);
             this.pictureBox3.TabIndex = 53;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label11
             // 
@@ -283,6 +291,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(169, 131);
             this.pictureBox2.TabIndex = 51;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label10
             // 
@@ -303,6 +312,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(169, 131);
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label9
             // 
@@ -313,11 +323,63 @@
             this.label9.TabIndex = 48;
             this.label9.Text = "Photo";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(130, 413);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "Status";
+            // 
+            // status
+            // 
+            this.status.AutoSize = true;
+            this.status.Location = new System.Drawing.Point(227, 413);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(0, 13);
+            this.status.TabIndex = 55;
+            // 
+            // change1
+            // 
+            this.change1.Location = new System.Drawing.Point(680, 40);
+            this.change1.Name = "change1";
+            this.change1.Size = new System.Drawing.Size(75, 23);
+            this.change1.TabIndex = 56;
+            this.change1.Text = "change";
+            this.change1.UseVisualStyleBackColor = true;
+            this.change1.Click += new System.EventHandler(this.change1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(680, 197);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 57;
+            this.button2.Text = "change";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // change3
+            // 
+            this.change3.Location = new System.Drawing.Point(689, 354);
+            this.change3.Name = "change3";
+            this.change3.Size = new System.Drawing.Size(75, 23);
+            this.change3.TabIndex = 58;
+            this.change3.Text = "change";
+            this.change3.UseVisualStyleBackColor = true;
+            this.change3.Click += new System.EventHandler(this.change3_Click);
+            // 
             // House
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 512);
+            this.Controls.Add(this.change3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.change1);
+            this.Controls.Add(this.status);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox2);
@@ -387,5 +449,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label status;
+        private System.Windows.Forms.Button change1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button change3;
     }
 }
