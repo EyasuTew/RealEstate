@@ -162,5 +162,12 @@ namespace RealEstate
                
             }
         }
+
+        private void profile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Profile pr = new Profile();
+            pr.Show();
+        }
     }
 }

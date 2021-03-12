@@ -32,6 +32,7 @@
             this.home = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.profile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // signOut
@@ -46,7 +47,7 @@
             // 
             // home
             // 
-            this.home.Location = new System.Drawing.Point(392, 12);
+            this.home.Location = new System.Drawing.Point(12, 12);
             this.home.Name = "home";
             this.home.Size = new System.Drawing.Size(75, 23);
             this.home.TabIndex = 2;
@@ -56,7 +57,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(12, 12);
+            this.add.Location = new System.Drawing.Point(258, 12);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
             this.add.TabIndex = 3;
@@ -73,11 +74,22 @@
             this.panel1.Size = new System.Drawing.Size(556, 468);
             this.panel1.TabIndex = 4;
             // 
+            // profile
+            // 
+            this.profile.Location = new System.Drawing.Point(360, 12);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(75, 23);
+            this.profile.TabIndex = 5;
+            this.profile.Text = "Profile";
+            this.profile.UseVisualStyleBackColor = true;
+            this.profile.Click += new System.EventHandler(this.profile_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 620);
+            this.Controls.Add(this.profile);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.add);
             this.Controls.Add(this.home);
@@ -97,5 +109,6 @@
         private System.Windows.Forms.Button home;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button profile;
     }
 }

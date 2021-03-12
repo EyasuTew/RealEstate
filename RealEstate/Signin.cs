@@ -59,12 +59,23 @@ namespace RealEstate
         {
             if (File.Exists("token.txt"))
             {
-                this.Close();
-                Dashboard dash = new Dashboard();
-                dash.Show();
-                //this.Hide();
-                //Console.WriteLine("File exists...");
-                //Application.Run(new Dashboard());
+                
+
+                string token = File.ReadAllText("token.txt");
+                UserEndPointClient userClient = new UserEndPointClient();
+                userDto user = userClient.me(token);
+                if (user.type == "admin")
+                {
+                    this.Close();
+                    Admin admin = new Admin();
+                    admin.Show();
+                }
+                else
+                {
+                    this.Close();
+                    Dashboard dash = new Dashboard();
+                    dash.Show();
+                }
             }
             else
             {

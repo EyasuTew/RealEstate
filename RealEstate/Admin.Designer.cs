@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.home = new System.Windows.Forms.Button();
             this.signout = new System.Windows.Forms.Button();
+            this.profile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -39,7 +40,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 138);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(761, 435);
+            this.panel1.Size = new System.Drawing.Size(554, 435);
             this.panel1.TabIndex = 7;
             // 
             // home
@@ -54,7 +55,7 @@
             // 
             // signout
             // 
-            this.signout.Location = new System.Drawing.Point(674, 12);
+            this.signout.Location = new System.Drawing.Point(475, 12);
             this.signout.Name = "signout";
             this.signout.Size = new System.Drawing.Size(75, 23);
             this.signout.TabIndex = 9;
@@ -62,11 +63,22 @@
             this.signout.UseVisualStyleBackColor = true;
             this.signout.Click += new System.EventHandler(this.signout_Click);
             // 
+            // profile
+            // 
+            this.profile.Location = new System.Drawing.Point(375, 12);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(75, 23);
+            this.profile.TabIndex = 10;
+            this.profile.Text = "Profile";
+            this.profile.UseVisualStyleBackColor = true;
+            this.profile.Click += new System.EventHandler(this.profile_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 573);
+            this.ClientSize = new System.Drawing.Size(554, 573);
+            this.Controls.Add(this.profile);
             this.Controls.Add(this.signout);
             this.Controls.Add(this.home);
             this.Controls.Add(this.panel1);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button home;
         private System.Windows.Forms.Button signout;
+        private System.Windows.Forms.Button profile;
     }
 }

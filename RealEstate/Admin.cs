@@ -14,7 +14,7 @@ namespace RealEstate
 {
     public partial class Admin : Form
     {
-        public static userDto currentUser = null;
+        public static UserEndPoint.userDto currentUser = null;
         public Admin()
         {
             InitializeComponent();
@@ -136,6 +136,13 @@ namespace RealEstate
             this.Hide();
             First first = new First();
             first.Show();
+        }
+
+        private void profile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Profile pr = new Profile();
+            pr.Show();
         }
     }
 }
