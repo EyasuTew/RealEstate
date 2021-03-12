@@ -15,6 +15,51 @@ namespace RealEstate.HousesEndpoint {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://endpoints.realestate.com.et/", ConfigurationName="HousesEndpoint.HousesEndpoint")]
     public interface HousesEndpoint {
         
+        // CODEGEN: Parameter 'photo' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.HousesEndpoint.changeHousePhotoOneResponse changeHousePhotoOne(RealEstate.HousesEndpoint.changeHousePhotoOne request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoOneResponse> changeHousePhotoOneAsync(RealEstate.HousesEndpoint.changeHousePhotoOne request);
+        
+        // CODEGEN: Parameter 'photo' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.HousesEndpoint.changeHousePhotoTwoResponse changeHousePhotoTwo(RealEstate.HousesEndpoint.changeHousePhotoTwo request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoTwoResponse> changeHousePhotoTwoAsync(RealEstate.HousesEndpoint.changeHousePhotoTwo request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.HousesEndpoint.responseDto deleteHouse(long houseId, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> deleteHouseAsync(long houseId, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.HousesEndpoint.responseDto createHouse(RealEstate.HousesEndpoint.housesRequestDto housesRequestDto, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> createHouseAsync(RealEstate.HousesEndpoint.housesRequestDto housesRequestDto, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.HousesEndpoint.houseListResponseDto searchBetweenPrice(RealEstate.HousesEndpoint.searchBetweenPriceDto searchBetweenPriceDto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.houseListResponseDto> searchBetweenPriceAsync(RealEstate.HousesEndpoint.searchBetweenPriceDto searchBetweenPriceDto);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -24,14 +69,14 @@ namespace RealEstate.HousesEndpoint {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<RealEstate.HousesEndpoint.housesDto> findByIdAsync(long houseId);
         
-        // CODEGEN: Parameter 'photo' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.HousesEndpoint.changeHousePhotoOneResponse changeHousePhotoOne(RealEstate.HousesEndpoint.changeHousePhotoOne request);
+        RealEstate.HousesEndpoint.houseListResponseDto searchHousesByString(string value);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoOneResponse> changeHousePhotoOneAsync(RealEstate.HousesEndpoint.changeHousePhotoOne request);
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.houseListResponseDto> searchHousesByStringAsync(string value);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
@@ -69,23 +114,14 @@ namespace RealEstate.HousesEndpoint {
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoThreeResponse> changeHousePhotoThreeAsync(RealEstate.HousesEndpoint.changeHousePhotoThree request);
         
-        // CODEGEN: Parameter 'photo' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.HousesEndpoint.changeHousePhotoTwoResponse changeHousePhotoTwo(RealEstate.HousesEndpoint.changeHousePhotoTwo request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoTwoResponse> changeHousePhotoTwoAsync(RealEstate.HousesEndpoint.changeHousePhotoTwo request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.HousesEndpoint.responseDto deleteHouse(long houseId, string token);
+        RealEstate.HousesEndpoint.houseListResponseDto searchBetweenArea(RealEstate.HousesEndpoint.searachBetweenAreaDto searachBetweenAreaDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> deleteHouseAsync(long houseId, string token);
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.houseListResponseDto> searchBetweenAreaAsync(RealEstate.HousesEndpoint.searachBetweenAreaDto searachBetweenAreaDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
@@ -99,20 +135,833 @@ namespace RealEstate.HousesEndpoint {
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.HousesEndpoint.responseDto createHouse(RealEstate.HousesEndpoint.housesRequestDto housesRequestDto, string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> createHouseAsync(RealEstate.HousesEndpoint.housesRequestDto housesRequestDto, string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         RealEstate.HousesEndpoint.houseListResponseDto searchHouses(RealEstate.HousesEndpoint.houseQueryDto houseQueryDto, RealEstate.HousesEndpoint.paginationDto paginationDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<RealEstate.HousesEndpoint.houseListResponseDto> searchHousesAsync(RealEstate.HousesEndpoint.houseQueryDto houseQueryDto, RealEstate.HousesEndpoint.paginationDto paginationDto);
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
+    public partial class responseDto : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string messageField;
+        
+        private bool statusField;
+        
+        private bool statusFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+                this.RaisePropertyChanged("message");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public bool status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool statusSpecified {
+            get {
+                return this.statusFieldSpecified;
+            }
+            set {
+                this.statusFieldSpecified = value;
+                this.RaisePropertyChanged("statusSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
+    public partial class houseQueryDto : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private double areaField;
+        
+        private bool areaFieldSpecified;
+        
+        private string companyField;
+        
+        private System.DateTime endField;
+        
+        private bool endFieldSpecified;
+        
+        private string finishingField;
+        
+        private string for_Field;
+        
+        private string locationField;
+        
+        private System.DateTime startField;
+        
+        private bool startFieldSpecified;
+        
+        private double totalpriceField;
+        
+        private bool totalpriceFieldSpecified;
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public double area {
+            get {
+                return this.areaField;
+            }
+            set {
+                this.areaField = value;
+                this.RaisePropertyChanged("area");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool areaSpecified {
+            get {
+                return this.areaFieldSpecified;
+            }
+            set {
+                this.areaFieldSpecified = value;
+                this.RaisePropertyChanged("areaSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string company {
+            get {
+                return this.companyField;
+            }
+            set {
+                this.companyField = value;
+                this.RaisePropertyChanged("company");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public System.DateTime end {
+            get {
+                return this.endField;
+            }
+            set {
+                this.endField = value;
+                this.RaisePropertyChanged("end");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool endSpecified {
+            get {
+                return this.endFieldSpecified;
+            }
+            set {
+                this.endFieldSpecified = value;
+                this.RaisePropertyChanged("endSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string finishing {
+            get {
+                return this.finishingField;
+            }
+            set {
+                this.finishingField = value;
+                this.RaisePropertyChanged("finishing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string for_ {
+            get {
+                return this.for_Field;
+            }
+            set {
+                this.for_Field = value;
+                this.RaisePropertyChanged("for_");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string location {
+            get {
+                return this.locationField;
+            }
+            set {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public System.DateTime start {
+            get {
+                return this.startField;
+            }
+            set {
+                this.startField = value;
+                this.RaisePropertyChanged("start");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool startSpecified {
+            get {
+                return this.startFieldSpecified;
+            }
+            set {
+                this.startFieldSpecified = value;
+                this.RaisePropertyChanged("startSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public double totalprice {
+            get {
+                return this.totalpriceField;
+            }
+            set {
+                this.totalpriceField = value;
+                this.RaisePropertyChanged("totalprice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool totalpriceSpecified {
+            get {
+                return this.totalpriceFieldSpecified;
+            }
+            set {
+                this.totalpriceFieldSpecified = value;
+                this.RaisePropertyChanged("totalpriceSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
+    public partial class searachBetweenAreaDto : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private double fromField;
+        
+        private bool fromFieldSpecified;
+        
+        private double toField;
+        
+        private bool toFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public double from {
+            get {
+                return this.fromField;
+            }
+            set {
+                this.fromField = value;
+                this.RaisePropertyChanged("from");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fromSpecified {
+            get {
+                return this.fromFieldSpecified;
+            }
+            set {
+                this.fromFieldSpecified = value;
+                this.RaisePropertyChanged("fromSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double to {
+            get {
+                return this.toField;
+            }
+            set {
+                this.toField = value;
+                this.RaisePropertyChanged("to");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool toSpecified {
+            get {
+                return this.toFieldSpecified;
+            }
+            set {
+                this.toFieldSpecified = value;
+                this.RaisePropertyChanged("toSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
+    public partial class housesUpdateRequestDto : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string areaField;
+        
+        private string companyField;
+        
+        private string finishingField;
+        
+        private string for_Field;
+        
+        private long idField;
+        
+        private bool idFieldSpecified;
+        
+        private string locationField;
+        
+        private string nameField;
+        
+        private string priceperhectarField;
+        
+        private bool statusField;
+        
+        private string totalpriceField;
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string area {
+            get {
+                return this.areaField;
+            }
+            set {
+                this.areaField = value;
+                this.RaisePropertyChanged("area");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string company {
+            get {
+                return this.companyField;
+            }
+            set {
+                this.companyField = value;
+                this.RaisePropertyChanged("company");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string finishing {
+            get {
+                return this.finishingField;
+            }
+            set {
+                this.finishingField = value;
+                this.RaisePropertyChanged("finishing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string for_ {
+            get {
+                return this.for_Field;
+            }
+            set {
+                this.for_Field = value;
+                this.RaisePropertyChanged("for_");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool idSpecified {
+            get {
+                return this.idFieldSpecified;
+            }
+            set {
+                this.idFieldSpecified = value;
+                this.RaisePropertyChanged("idSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string location {
+            get {
+                return this.locationField;
+            }
+            set {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string priceperhectar {
+            get {
+                return this.priceperhectarField;
+            }
+            set {
+                this.priceperhectarField = value;
+                this.RaisePropertyChanged("priceperhectar");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public bool status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public string totalprice {
+            get {
+                return this.totalpriceField;
+            }
+            set {
+                this.totalpriceField = value;
+                this.RaisePropertyChanged("totalprice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
+    public partial class paginationDto : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int countField;
+        
+        private bool countFieldSpecified;
+        
+        private int maxField;
+        
+        private bool maxFieldSpecified;
+        
+        private int startField;
+        
+        private bool startFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int count {
+            get {
+                return this.countField;
+            }
+            set {
+                this.countField = value;
+                this.RaisePropertyChanged("count");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool countSpecified {
+            get {
+                return this.countFieldSpecified;
+            }
+            set {
+                this.countFieldSpecified = value;
+                this.RaisePropertyChanged("countSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int max {
+            get {
+                return this.maxField;
+            }
+            set {
+                this.maxField = value;
+                this.RaisePropertyChanged("max");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool maxSpecified {
+            get {
+                return this.maxFieldSpecified;
+            }
+            set {
+                this.maxFieldSpecified = value;
+                this.RaisePropertyChanged("maxSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int start {
+            get {
+                return this.startField;
+            }
+            set {
+                this.startField = value;
+                this.RaisePropertyChanged("start");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool startSpecified {
+            get {
+                return this.startFieldSpecified;
+            }
+            set {
+                this.startFieldSpecified = value;
+                this.RaisePropertyChanged("startSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
+    public partial class userDto : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string companyField;
+        
+        private System.DateTime createdatField;
+        
+        private bool createdatFieldSpecified;
+        
+        private string emailField;
+        
+        private string fnameField;
+        
+        private long idField;
+        
+        private bool idFieldSpecified;
+        
+        private string lnameField;
+        
+        private string passwordField;
+        
+        private string phoneField;
+        
+        private bool statusField;
+        
+        private string typeField;
+        
+        private string usernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string company {
+            get {
+                return this.companyField;
+            }
+            set {
+                this.companyField = value;
+                this.RaisePropertyChanged("company");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public System.DateTime createdat {
+            get {
+                return this.createdatField;
+            }
+            set {
+                this.createdatField = value;
+                this.RaisePropertyChanged("createdat");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool createdatSpecified {
+            get {
+                return this.createdatFieldSpecified;
+            }
+            set {
+                this.createdatFieldSpecified = value;
+                this.RaisePropertyChanged("createdatSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("email");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string fname {
+            get {
+                return this.fnameField;
+            }
+            set {
+                this.fnameField = value;
+                this.RaisePropertyChanged("fname");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool idSpecified {
+            get {
+                return this.idFieldSpecified;
+            }
+            set {
+                this.idFieldSpecified = value;
+                this.RaisePropertyChanged("idSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string lname {
+            get {
+                return this.lnameField;
+            }
+            set {
+                this.lnameField = value;
+                this.RaisePropertyChanged("lname");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                this.passwordField = value;
+                this.RaisePropertyChanged("password");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string phone {
+            get {
+                return this.phoneField;
+            }
+            set {
+                this.phoneField = value;
+                this.RaisePropertyChanged("phone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public bool status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
+                this.RaisePropertyChanged("username");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     /// <remarks/>
@@ -433,187 +1282,47 @@ namespace RealEstate.HousesEndpoint {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
-    public partial class userDto : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class houseListResponseDto : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string companyField;
+        private housesDto[] housesDtoListField;
         
-        private System.DateTime createdatField;
+        private paginationDto paginationDtoField;
         
-        private bool createdatFieldSpecified;
-        
-        private string emailField;
-        
-        private string fnameField;
-        
-        private long idField;
-        
-        private bool idFieldSpecified;
-        
-        private string lnameField;
-        
-        private string passwordField;
-        
-        private string phoneField;
-        
-        private bool statusField;
-        
-        private string typeField;
-        
-        private string usernameField;
+        private responseDto responseDtoField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string company {
+        [System.Xml.Serialization.XmlElementAttribute("housesDtoList", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public housesDto[] housesDtoList {
             get {
-                return this.companyField;
+                return this.housesDtoListField;
             }
             set {
-                this.companyField = value;
-                this.RaisePropertyChanged("company");
+                this.housesDtoListField = value;
+                this.RaisePropertyChanged("housesDtoList");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public System.DateTime createdat {
+        public paginationDto paginationDto {
             get {
-                return this.createdatField;
+                return this.paginationDtoField;
             }
             set {
-                this.createdatField = value;
-                this.RaisePropertyChanged("createdat");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool createdatSpecified {
-            get {
-                return this.createdatFieldSpecified;
-            }
-            set {
-                this.createdatFieldSpecified = value;
-                this.RaisePropertyChanged("createdatSpecified");
+                this.paginationDtoField = value;
+                this.RaisePropertyChanged("paginationDto");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string email {
+        public responseDto responseDto {
             get {
-                return this.emailField;
+                return this.responseDtoField;
             }
             set {
-                this.emailField = value;
-                this.RaisePropertyChanged("email");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string fname {
-            get {
-                return this.fnameField;
-            }
-            set {
-                this.fnameField = value;
-                this.RaisePropertyChanged("fname");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool idSpecified {
-            get {
-                return this.idFieldSpecified;
-            }
-            set {
-                this.idFieldSpecified = value;
-                this.RaisePropertyChanged("idSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public string lname {
-            get {
-                return this.lnameField;
-            }
-            set {
-                this.lnameField = value;
-                this.RaisePropertyChanged("lname");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
-        public string password {
-            get {
-                return this.passwordField;
-            }
-            set {
-                this.passwordField = value;
-                this.RaisePropertyChanged("password");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public string phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                this.phoneField = value;
-                this.RaisePropertyChanged("phone");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
-        public bool status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-                this.RaisePropertyChanged("status");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("type");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public string username {
-            get {
-                return this.usernameField;
-            }
-            set {
-                this.usernameField = value;
-                this.RaisePropertyChanged("username");
+                this.responseDtoField = value;
+                this.RaisePropertyChanged("responseDto");
             }
         }
         
@@ -633,187 +1342,61 @@ namespace RealEstate.HousesEndpoint {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
-    public partial class houseQueryDto : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class searchBetweenPriceDto : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private double areaField;
+        private double fromField;
         
-        private bool areaFieldSpecified;
+        private bool fromFieldSpecified;
         
-        private string companyField;
+        private double toField;
         
-        private System.DateTime endField;
-        
-        private bool endFieldSpecified;
-        
-        private string finishingField;
-        
-        private string for_Field;
-        
-        private string locationField;
-        
-        private System.DateTime startField;
-        
-        private bool startFieldSpecified;
-        
-        private double totalpriceField;
-        
-        private bool totalpriceFieldSpecified;
-        
-        private string typeField;
+        private bool toFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public double area {
+        public double from {
             get {
-                return this.areaField;
+                return this.fromField;
             }
             set {
-                this.areaField = value;
-                this.RaisePropertyChanged("area");
+                this.fromField = value;
+                this.RaisePropertyChanged("from");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool areaSpecified {
+        public bool fromSpecified {
             get {
-                return this.areaFieldSpecified;
+                return this.fromFieldSpecified;
             }
             set {
-                this.areaFieldSpecified = value;
-                this.RaisePropertyChanged("areaSpecified");
+                this.fromFieldSpecified = value;
+                this.RaisePropertyChanged("fromSpecified");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string company {
+        public double to {
             get {
-                return this.companyField;
+                return this.toField;
             }
             set {
-                this.companyField = value;
-                this.RaisePropertyChanged("company");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public System.DateTime end {
-            get {
-                return this.endField;
-            }
-            set {
-                this.endField = value;
-                this.RaisePropertyChanged("end");
+                this.toField = value;
+                this.RaisePropertyChanged("to");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool endSpecified {
+        public bool toSpecified {
             get {
-                return this.endFieldSpecified;
+                return this.toFieldSpecified;
             }
             set {
-                this.endFieldSpecified = value;
-                this.RaisePropertyChanged("endSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string finishing {
-            get {
-                return this.finishingField;
-            }
-            set {
-                this.finishingField = value;
-                this.RaisePropertyChanged("finishing");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public string for_ {
-            get {
-                return this.for_Field;
-            }
-            set {
-                this.for_Field = value;
-                this.RaisePropertyChanged("for_");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public string location {
-            get {
-                return this.locationField;
-            }
-            set {
-                this.locationField = value;
-                this.RaisePropertyChanged("location");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
-        public System.DateTime start {
-            get {
-                return this.startField;
-            }
-            set {
-                this.startField = value;
-                this.RaisePropertyChanged("start");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool startSpecified {
-            get {
-                return this.startFieldSpecified;
-            }
-            set {
-                this.startFieldSpecified = value;
-                this.RaisePropertyChanged("startSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public double totalprice {
-            get {
-                return this.totalpriceField;
-            }
-            set {
-                this.totalpriceField = value;
-                this.RaisePropertyChanged("totalprice");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool totalpriceSpecified {
-            get {
-                return this.totalpriceFieldSpecified;
-            }
-            set {
-                this.totalpriceFieldSpecified = value;
-                this.RaisePropertyChanged("totalpriceSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("type");
+                this.toFieldSpecified = value;
+                this.RaisePropertyChanged("toSpecified");
             }
         }
         
@@ -1055,414 +1638,6 @@ namespace RealEstate.HousesEndpoint {
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
-    public partial class housesUpdateRequestDto : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string areaField;
-        
-        private string companyField;
-        
-        private string finishingField;
-        
-        private string for_Field;
-        
-        private long idField;
-        
-        private bool idFieldSpecified;
-        
-        private string locationField;
-        
-        private string nameField;
-        
-        private string priceperhectarField;
-        
-        private bool statusField;
-        
-        private string totalpriceField;
-        
-        private string typeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string area {
-            get {
-                return this.areaField;
-            }
-            set {
-                this.areaField = value;
-                this.RaisePropertyChanged("area");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string company {
-            get {
-                return this.companyField;
-            }
-            set {
-                this.companyField = value;
-                this.RaisePropertyChanged("company");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string finishing {
-            get {
-                return this.finishingField;
-            }
-            set {
-                this.finishingField = value;
-                this.RaisePropertyChanged("finishing");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string for_ {
-            get {
-                return this.for_Field;
-            }
-            set {
-                this.for_Field = value;
-                this.RaisePropertyChanged("for_");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool idSpecified {
-            get {
-                return this.idFieldSpecified;
-            }
-            set {
-                this.idFieldSpecified = value;
-                this.RaisePropertyChanged("idSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public string location {
-            get {
-                return this.locationField;
-            }
-            set {
-                this.locationField = value;
-                this.RaisePropertyChanged("location");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public string priceperhectar {
-            get {
-                return this.priceperhectarField;
-            }
-            set {
-                this.priceperhectarField = value;
-                this.RaisePropertyChanged("priceperhectar");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
-        public bool status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-                this.RaisePropertyChanged("status");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
-        public string totalprice {
-            get {
-                return this.totalpriceField;
-            }
-            set {
-                this.totalpriceField = value;
-                this.RaisePropertyChanged("totalprice");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("type");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
-    public partial class houseListResponseDto : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private housesDto[] housesDtoListField;
-        
-        private paginationDto paginationDtoField;
-        
-        private responseDto responseDtoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("housesDtoList", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public housesDto[] housesDtoList {
-            get {
-                return this.housesDtoListField;
-            }
-            set {
-                this.housesDtoListField = value;
-                this.RaisePropertyChanged("housesDtoList");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public paginationDto paginationDto {
-            get {
-                return this.paginationDtoField;
-            }
-            set {
-                this.paginationDtoField = value;
-                this.RaisePropertyChanged("paginationDto");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public responseDto responseDto {
-            get {
-                return this.responseDtoField;
-            }
-            set {
-                this.responseDtoField = value;
-                this.RaisePropertyChanged("responseDto");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
-    public partial class paginationDto : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int countField;
-        
-        private bool countFieldSpecified;
-        
-        private int maxField;
-        
-        private bool maxFieldSpecified;
-        
-        private int startField;
-        
-        private bool startFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int count {
-            get {
-                return this.countField;
-            }
-            set {
-                this.countField = value;
-                this.RaisePropertyChanged("count");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool countSpecified {
-            get {
-                return this.countFieldSpecified;
-            }
-            set {
-                this.countFieldSpecified = value;
-                this.RaisePropertyChanged("countSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int max {
-            get {
-                return this.maxField;
-            }
-            set {
-                this.maxField = value;
-                this.RaisePropertyChanged("max");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool maxSpecified {
-            get {
-                return this.maxFieldSpecified;
-            }
-            set {
-                this.maxFieldSpecified = value;
-                this.RaisePropertyChanged("maxSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public int start {
-            get {
-                return this.startField;
-            }
-            set {
-                this.startField = value;
-                this.RaisePropertyChanged("start");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool startSpecified {
-            get {
-                return this.startFieldSpecified;
-            }
-            set {
-                this.startFieldSpecified = value;
-                this.RaisePropertyChanged("startSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
-    public partial class responseDto : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string messageField;
-        
-        private bool statusField;
-        
-        private bool statusFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string message {
-            get {
-                return this.messageField;
-            }
-            set {
-                this.messageField = value;
-                this.RaisePropertyChanged("message");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public bool status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-                this.RaisePropertyChanged("status");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool statusSpecified {
-            get {
-                return this.statusFieldSpecified;
-            }
-            set {
-                this.statusFieldSpecified = value;
-                this.RaisePropertyChanged("statusSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1502,49 +1677,6 @@ namespace RealEstate.HousesEndpoint {
         }
         
         public changeHousePhotoOneResponse(RealEstate.HousesEndpoint.responseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="changeHousePhotoThree", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class changeHousePhotoThree {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public long houseId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] photo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
-        public string token;
-        
-        public changeHousePhotoThree() {
-        }
-        
-        public changeHousePhotoThree(long houseId, byte[] photo, string token) {
-            this.houseId = houseId;
-            this.photo = photo;
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="changeHousePhotoThreeResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class changeHousePhotoThreeResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public RealEstate.HousesEndpoint.responseDto @return;
-        
-        public changeHousePhotoThreeResponse() {
-        }
-        
-        public changeHousePhotoThreeResponse(RealEstate.HousesEndpoint.responseDto @return) {
             this.@return = @return;
         }
     }
@@ -1592,6 +1724,49 @@ namespace RealEstate.HousesEndpoint {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="changeHousePhotoThree", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
+    public partial class changeHousePhotoThree {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public long houseId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] photo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        public string token;
+        
+        public changeHousePhotoThree() {
+        }
+        
+        public changeHousePhotoThree(long houseId, byte[] photo, string token) {
+            this.houseId = houseId;
+            this.photo = photo;
+            this.token = token;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="changeHousePhotoThreeResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
+    public partial class changeHousePhotoThreeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public RealEstate.HousesEndpoint.responseDto @return;
+        
+        public changeHousePhotoThreeResponse() {
+        }
+        
+        public changeHousePhotoThreeResponse(RealEstate.HousesEndpoint.responseDto @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface HousesEndpointChannel : RealEstate.HousesEndpoint.HousesEndpoint, System.ServiceModel.IClientChannel {
     }
@@ -1619,14 +1794,6 @@ namespace RealEstate.HousesEndpoint {
                 base(binding, remoteAddress) {
         }
         
-        public RealEstate.HousesEndpoint.housesDto findById(long houseId) {
-            return base.Channel.findById(houseId);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.housesDto> findByIdAsync(long houseId) {
-            return base.Channel.findByIdAsync(houseId);
-        }
-        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         RealEstate.HousesEndpoint.changeHousePhotoOneResponse RealEstate.HousesEndpoint.HousesEndpoint.changeHousePhotoOne(RealEstate.HousesEndpoint.changeHousePhotoOne request) {
             return base.Channel.changeHousePhotoOne(request);
@@ -1652,6 +1819,73 @@ namespace RealEstate.HousesEndpoint {
             inValue.photo = photo;
             inValue.token = token;
             return ((RealEstate.HousesEndpoint.HousesEndpoint)(this)).changeHousePhotoOneAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        RealEstate.HousesEndpoint.changeHousePhotoTwoResponse RealEstate.HousesEndpoint.HousesEndpoint.changeHousePhotoTwo(RealEstate.HousesEndpoint.changeHousePhotoTwo request) {
+            return base.Channel.changeHousePhotoTwo(request);
+        }
+        
+        public RealEstate.HousesEndpoint.responseDto changeHousePhotoTwo(long houseId, byte[] photo, string token) {
+            RealEstate.HousesEndpoint.changeHousePhotoTwo inValue = new RealEstate.HousesEndpoint.changeHousePhotoTwo();
+            inValue.houseId = houseId;
+            inValue.photo = photo;
+            inValue.token = token;
+            RealEstate.HousesEndpoint.changeHousePhotoTwoResponse retVal = ((RealEstate.HousesEndpoint.HousesEndpoint)(this)).changeHousePhotoTwo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoTwoResponse> RealEstate.HousesEndpoint.HousesEndpoint.changeHousePhotoTwoAsync(RealEstate.HousesEndpoint.changeHousePhotoTwo request) {
+            return base.Channel.changeHousePhotoTwoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoTwoResponse> changeHousePhotoTwoAsync(long houseId, byte[] photo, string token) {
+            RealEstate.HousesEndpoint.changeHousePhotoTwo inValue = new RealEstate.HousesEndpoint.changeHousePhotoTwo();
+            inValue.houseId = houseId;
+            inValue.photo = photo;
+            inValue.token = token;
+            return ((RealEstate.HousesEndpoint.HousesEndpoint)(this)).changeHousePhotoTwoAsync(inValue);
+        }
+        
+        public RealEstate.HousesEndpoint.responseDto deleteHouse(long houseId, string token) {
+            return base.Channel.deleteHouse(houseId, token);
+        }
+        
+        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> deleteHouseAsync(long houseId, string token) {
+            return base.Channel.deleteHouseAsync(houseId, token);
+        }
+        
+        public RealEstate.HousesEndpoint.responseDto createHouse(RealEstate.HousesEndpoint.housesRequestDto housesRequestDto, string token) {
+            return base.Channel.createHouse(housesRequestDto, token);
+        }
+        
+        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> createHouseAsync(RealEstate.HousesEndpoint.housesRequestDto housesRequestDto, string token) {
+            return base.Channel.createHouseAsync(housesRequestDto, token);
+        }
+        
+        public RealEstate.HousesEndpoint.houseListResponseDto searchBetweenPrice(RealEstate.HousesEndpoint.searchBetweenPriceDto searchBetweenPriceDto) {
+            return base.Channel.searchBetweenPrice(searchBetweenPriceDto);
+        }
+        
+        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.houseListResponseDto> searchBetweenPriceAsync(RealEstate.HousesEndpoint.searchBetweenPriceDto searchBetweenPriceDto) {
+            return base.Channel.searchBetweenPriceAsync(searchBetweenPriceDto);
+        }
+        
+        public RealEstate.HousesEndpoint.housesDto findById(long houseId) {
+            return base.Channel.findById(houseId);
+        }
+        
+        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.housesDto> findByIdAsync(long houseId) {
+            return base.Channel.findByIdAsync(houseId);
+        }
+        
+        public RealEstate.HousesEndpoint.houseListResponseDto searchHousesByString(string value) {
+            return base.Channel.searchHousesByString(value);
+        }
+        
+        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.houseListResponseDto> searchHousesByStringAsync(string value) {
+            return base.Channel.searchHousesByStringAsync(value);
         }
         
         public RealEstate.HousesEndpoint.houseListResponseDto listMyHouse(RealEstate.HousesEndpoint.paginationDto paginationDto, string token) {
@@ -1705,39 +1939,12 @@ namespace RealEstate.HousesEndpoint {
             return ((RealEstate.HousesEndpoint.HousesEndpoint)(this)).changeHousePhotoThreeAsync(inValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.HousesEndpoint.changeHousePhotoTwoResponse RealEstate.HousesEndpoint.HousesEndpoint.changeHousePhotoTwo(RealEstate.HousesEndpoint.changeHousePhotoTwo request) {
-            return base.Channel.changeHousePhotoTwo(request);
+        public RealEstate.HousesEndpoint.houseListResponseDto searchBetweenArea(RealEstate.HousesEndpoint.searachBetweenAreaDto searachBetweenAreaDto) {
+            return base.Channel.searchBetweenArea(searachBetweenAreaDto);
         }
         
-        public RealEstate.HousesEndpoint.responseDto changeHousePhotoTwo(long houseId, byte[] photo, string token) {
-            RealEstate.HousesEndpoint.changeHousePhotoTwo inValue = new RealEstate.HousesEndpoint.changeHousePhotoTwo();
-            inValue.houseId = houseId;
-            inValue.photo = photo;
-            inValue.token = token;
-            RealEstate.HousesEndpoint.changeHousePhotoTwoResponse retVal = ((RealEstate.HousesEndpoint.HousesEndpoint)(this)).changeHousePhotoTwo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoTwoResponse> RealEstate.HousesEndpoint.HousesEndpoint.changeHousePhotoTwoAsync(RealEstate.HousesEndpoint.changeHousePhotoTwo request) {
-            return base.Channel.changeHousePhotoTwoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.changeHousePhotoTwoResponse> changeHousePhotoTwoAsync(long houseId, byte[] photo, string token) {
-            RealEstate.HousesEndpoint.changeHousePhotoTwo inValue = new RealEstate.HousesEndpoint.changeHousePhotoTwo();
-            inValue.houseId = houseId;
-            inValue.photo = photo;
-            inValue.token = token;
-            return ((RealEstate.HousesEndpoint.HousesEndpoint)(this)).changeHousePhotoTwoAsync(inValue);
-        }
-        
-        public RealEstate.HousesEndpoint.responseDto deleteHouse(long houseId, string token) {
-            return base.Channel.deleteHouse(houseId, token);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> deleteHouseAsync(long houseId, string token) {
-            return base.Channel.deleteHouseAsync(houseId, token);
+        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.houseListResponseDto> searchBetweenAreaAsync(RealEstate.HousesEndpoint.searachBetweenAreaDto searachBetweenAreaDto) {
+            return base.Channel.searchBetweenAreaAsync(searachBetweenAreaDto);
         }
         
         public RealEstate.HousesEndpoint.houseListResponseDto listAll(RealEstate.HousesEndpoint.paginationDto paginationDto) {
@@ -1746,14 +1953,6 @@ namespace RealEstate.HousesEndpoint {
         
         public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.houseListResponseDto> listAllAsync(RealEstate.HousesEndpoint.paginationDto paginationDto) {
             return base.Channel.listAllAsync(paginationDto);
-        }
-        
-        public RealEstate.HousesEndpoint.responseDto createHouse(RealEstate.HousesEndpoint.housesRequestDto housesRequestDto, string token) {
-            return base.Channel.createHouse(housesRequestDto, token);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> createHouseAsync(RealEstate.HousesEndpoint.housesRequestDto housesRequestDto, string token) {
-            return base.Channel.createHouseAsync(housesRequestDto, token);
         }
         
         public RealEstate.HousesEndpoint.houseListResponseDto searchHouses(RealEstate.HousesEndpoint.houseQueryDto houseQueryDto, RealEstate.HousesEndpoint.paginationDto paginationDto) {

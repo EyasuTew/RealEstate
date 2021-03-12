@@ -60,7 +60,7 @@ namespace RealEstate
             pag.max = 30;
             pag.count = 0;
 
-            houseListResponseDto listHouse = houseClient.listAll(pag);
+            houseListResponseDto listHouse = houseClient.listMyHouse(pag,token);
             if (listHouse.responseDto.status == false)
             {
 

@@ -10,6 +10,43 @@
       <xs:element name="paginationDto" type="tns:paginationDto" />
       <xs:element name="responseDto" type="tns:responseDto" />
       <xs:element name="userDto" type="tns:userDto" />
+      <xs:complexType name="responseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="housesRequestDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="area" type="xs:string" />
+          <xs:element minOccurs="0" name="company" type="xs:string" />
+          <xs:element minOccurs="0" name="finishing" type="xs:string" />
+          <xs:element minOccurs="0" name="for_" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="location" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="photoone" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="photothree" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="phototwo" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="priceperhectar" type="xs:string" />
+          <xs:element name="status" type="xs:boolean" />
+          <xs:element minOccurs="0" name="totalprice" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchBetweenPriceDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="from" type="xs:double" />
+          <xs:element minOccurs="0" name="to" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="houseListResponseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="housesDtoList" nillable="true" type="tns:housesDto" />
+          <xs:element minOccurs="0" name="paginationDto" type="tns:paginationDto" />
+          <xs:element minOccurs="0" name="responseDto" type="tns:responseDto" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="housesDto">
         <xs:sequence>
           <xs:element minOccurs="0" name="area" type="xs:double" />
@@ -45,24 +82,11 @@
           <xs:element minOccurs="0" name="username" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="responseDto">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="message" type="xs:string" />
-          <xs:element minOccurs="0" name="status" type="xs:boolean" />
-        </xs:sequence>
-      </xs:complexType>
       <xs:complexType name="paginationDto">
         <xs:sequence>
           <xs:element minOccurs="0" name="count" type="xs:int" />
           <xs:element minOccurs="0" name="max" type="xs:int" />
           <xs:element minOccurs="0" name="start" type="xs:int" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="houseListResponseDto">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="housesDtoList" nillable="true" type="tns:housesDto" />
-          <xs:element minOccurs="0" name="paginationDto" type="tns:paginationDto" />
-          <xs:element minOccurs="0" name="responseDto" type="tns:responseDto" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="housesUpdateRequestDto">
@@ -80,22 +104,10 @@
           <xs:element minOccurs="0" name="type" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="housesRequestDto">
+      <xs:complexType name="searachBetweenAreaDto">
         <xs:sequence>
-          <xs:element minOccurs="0" name="area" type="xs:string" />
-          <xs:element minOccurs="0" name="company" type="xs:string" />
-          <xs:element minOccurs="0" name="finishing" type="xs:string" />
-          <xs:element minOccurs="0" name="for_" type="xs:string" />
-          <xs:element minOccurs="0" name="id" type="xs:long" />
-          <xs:element minOccurs="0" name="location" type="xs:string" />
-          <xs:element minOccurs="0" name="name" type="xs:string" />
-          <xs:element minOccurs="0" name="photoone" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="photothree" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="phototwo" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="priceperhectar" type="xs:string" />
-          <xs:element name="status" type="xs:boolean" />
-          <xs:element minOccurs="0" name="totalprice" type="xs:string" />
-          <xs:element minOccurs="0" name="type" type="xs:string" />
+          <xs:element minOccurs="0" name="from" type="xs:double" />
+          <xs:element minOccurs="0" name="to" type="xs:double" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="houseQueryDto">
@@ -113,13 +125,49 @@
       </xs:complexType>
     </xs:schema>
   </wsdl:types>
-  <wsdl:message name="listAllResponse">
-    <wsdl:part name="return" type="tns:houseListResponseDto" />
-  </wsdl:message>
   <wsdl:message name="changeHousePhotoOne">
     <wsdl:part name="houseId" type="xsd:long" />
     <wsdl:part name="photo" type="xsd:base64Binary" />
     <wsdl:part name="token" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="changeHousePhotoOneResponse">
+    <wsdl:part name="return" type="tns:responseDto" />
+  </wsdl:message>
+  <wsdl:message name="updateHouseResponse">
+    <wsdl:part name="return" type="tns:responseDto" />
+  </wsdl:message>
+  <wsdl:message name="createHouse">
+    <wsdl:part name="housesRequestDto" type="tns:housesRequestDto" />
+    <wsdl:part name="token" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="searchBetweenPrice">
+    <wsdl:part name="searchBetweenPriceDto" type="tns:searchBetweenPriceDto" />
+  </wsdl:message>
+  <wsdl:message name="searchBetweenAreaResponse">
+    <wsdl:part name="return" type="tns:houseListResponseDto" />
+  </wsdl:message>
+  <wsdl:message name="findById">
+    <wsdl:part name="houseId" type="xsd:long" />
+  </wsdl:message>
+  <wsdl:message name="searchHousesByStringResponse">
+    <wsdl:part name="return" type="tns:houseListResponseDto" />
+  </wsdl:message>
+  <wsdl:message name="searchHousesByString">
+    <wsdl:part name="value" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="listMyHouseResponse">
+    <wsdl:part name="return" type="tns:houseListResponseDto" />
+  </wsdl:message>
+  <wsdl:message name="listMyHouse">
+    <wsdl:part name="paginationDto" type="tns:paginationDto" />
+    <wsdl:part name="token" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateHouse">
+    <wsdl:part name="housesRequestDto" type="tns:housesUpdateRequestDto" />
+    <wsdl:part name="token" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="listAllResponse">
+    <wsdl:part name="return" type="tns:houseListResponseDto" />
   </wsdl:message>
   <wsdl:message name="createHouseResponse">
     <wsdl:part name="return" type="tns:responseDto" />
@@ -130,33 +178,20 @@
   <wsdl:message name="changeHousePhotoTwoResponse">
     <wsdl:part name="return" type="tns:responseDto" />
   </wsdl:message>
-  <wsdl:message name="changeHousePhotoOneResponse">
-    <wsdl:part name="return" type="tns:responseDto" />
-  </wsdl:message>
-  <wsdl:message name="changeHousePhotoThreeResponse">
-    <wsdl:part name="return" type="tns:responseDto" />
-  </wsdl:message>
   <wsdl:message name="changeHousePhotoTwo">
     <wsdl:part name="houseId" type="xsd:long" />
     <wsdl:part name="photo" type="xsd:base64Binary" />
     <wsdl:part name="token" type="xsd:string" />
   </wsdl:message>
+  <wsdl:message name="changeHousePhotoThreeResponse">
+    <wsdl:part name="return" type="tns:responseDto" />
+  </wsdl:message>
   <wsdl:message name="deleteHouse">
     <wsdl:part name="houseId" type="xsd:long" />
     <wsdl:part name="token" type="xsd:string" />
   </wsdl:message>
-  <wsdl:message name="updateHouseResponse">
-    <wsdl:part name="return" type="tns:responseDto" />
-  </wsdl:message>
-  <wsdl:message name="createHouse">
-    <wsdl:part name="housesRequestDto" type="tns:housesRequestDto" />
-    <wsdl:part name="token" type="xsd:string" />
-  </wsdl:message>
   <wsdl:message name="searchHousesResponse">
     <wsdl:part name="return" type="tns:houseListResponseDto" />
-  </wsdl:message>
-  <wsdl:message name="findById">
-    <wsdl:part name="houseId" type="xsd:long" />
   </wsdl:message>
   <wsdl:message name="findByIdResponse">
     <wsdl:part name="return" type="tns:housesDto" />
@@ -164,25 +199,20 @@
   <wsdl:message name="changeHouseStatusResponse">
     <wsdl:part name="return" type="tns:responseDto" />
   </wsdl:message>
-  <wsdl:message name="listMyHouseResponse">
-    <wsdl:part name="return" type="tns:houseListResponseDto" />
-  </wsdl:message>
-  <wsdl:message name="listMyHouse">
-    <wsdl:part name="paginationDto" type="tns:paginationDto" />
-    <wsdl:part name="token" type="xsd:string" />
-  </wsdl:message>
   <wsdl:message name="changeHouseStatus">
     <wsdl:part name="houseId" type="xsd:long" />
     <wsdl:part name="token" type="xsd:string" />
   </wsdl:message>
-  <wsdl:message name="updateHouse">
-    <wsdl:part name="housesRequestDto" type="tns:housesUpdateRequestDto" />
-    <wsdl:part name="token" type="xsd:string" />
+  <wsdl:message name="searchBetweenPriceResponse">
+    <wsdl:part name="return" type="tns:houseListResponseDto" />
   </wsdl:message>
   <wsdl:message name="changeHousePhotoThree">
     <wsdl:part name="houseId" type="xsd:long" />
     <wsdl:part name="photo" type="xsd:base64Binary" />
     <wsdl:part name="token" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="searchBetweenArea">
+    <wsdl:part name="searachBetweenAreaDto" type="tns:searachBetweenAreaDto" />
   </wsdl:message>
   <wsdl:message name="listAll">
     <wsdl:part name="paginationDto" type="tns:paginationDto" />
@@ -192,13 +222,33 @@
     <wsdl:part name="paginationDto" type="tns:paginationDto" />
   </wsdl:message>
   <wsdl:portType name="HousesEndpoint">
+    <wsdl:operation name="changeHousePhotoOne">
+      <wsdl:input name="changeHousePhotoOne" message="tns:changeHousePhotoOne" />
+      <wsdl:output name="changeHousePhotoOneResponse" message="tns:changeHousePhotoOneResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changeHousePhotoTwo">
+      <wsdl:input name="changeHousePhotoTwo" message="tns:changeHousePhotoTwo" />
+      <wsdl:output name="changeHousePhotoTwoResponse" message="tns:changeHousePhotoTwoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteHouse">
+      <wsdl:input name="deleteHouse" message="tns:deleteHouse" />
+      <wsdl:output name="deleteHouseResponse" message="tns:deleteHouseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createHouse">
+      <wsdl:input name="createHouse" message="tns:createHouse" />
+      <wsdl:output name="createHouseResponse" message="tns:createHouseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBetweenPrice">
+      <wsdl:input name="searchBetweenPrice" message="tns:searchBetweenPrice" />
+      <wsdl:output name="searchBetweenPriceResponse" message="tns:searchBetweenPriceResponse" />
+    </wsdl:operation>
     <wsdl:operation name="findById">
       <wsdl:input name="findById" message="tns:findById" />
       <wsdl:output name="findByIdResponse" message="tns:findByIdResponse" />
     </wsdl:operation>
-    <wsdl:operation name="changeHousePhotoOne">
-      <wsdl:input name="changeHousePhotoOne" message="tns:changeHousePhotoOne" />
-      <wsdl:output name="changeHousePhotoOneResponse" message="tns:changeHousePhotoOneResponse" />
+    <wsdl:operation name="searchHousesByString">
+      <wsdl:input name="searchHousesByString" message="tns:searchHousesByString" />
+      <wsdl:output name="searchHousesByStringResponse" message="tns:searchHousesByStringResponse" />
     </wsdl:operation>
     <wsdl:operation name="listMyHouse">
       <wsdl:input name="listMyHouse" message="tns:listMyHouse" />
@@ -216,21 +266,13 @@
       <wsdl:input name="changeHousePhotoThree" message="tns:changeHousePhotoThree" />
       <wsdl:output name="changeHousePhotoThreeResponse" message="tns:changeHousePhotoThreeResponse" />
     </wsdl:operation>
-    <wsdl:operation name="changeHousePhotoTwo">
-      <wsdl:input name="changeHousePhotoTwo" message="tns:changeHousePhotoTwo" />
-      <wsdl:output name="changeHousePhotoTwoResponse" message="tns:changeHousePhotoTwoResponse" />
-    </wsdl:operation>
-    <wsdl:operation name="deleteHouse">
-      <wsdl:input name="deleteHouse" message="tns:deleteHouse" />
-      <wsdl:output name="deleteHouseResponse" message="tns:deleteHouseResponse" />
+    <wsdl:operation name="searchBetweenArea">
+      <wsdl:input name="searchBetweenArea" message="tns:searchBetweenArea" />
+      <wsdl:output name="searchBetweenAreaResponse" message="tns:searchBetweenAreaResponse" />
     </wsdl:operation>
     <wsdl:operation name="listAll">
       <wsdl:input name="listAll" message="tns:listAll" />
       <wsdl:output name="listAllResponse" message="tns:listAllResponse" />
-    </wsdl:operation>
-    <wsdl:operation name="createHouse">
-      <wsdl:input name="createHouse" message="tns:createHouse" />
-      <wsdl:output name="createHouseResponse" message="tns:createHouseResponse" />
     </wsdl:operation>
     <wsdl:operation name="searchHouses">
       <wsdl:input name="searchHouses" message="tns:searchHouses" />
@@ -239,6 +281,51 @@
   </wsdl:portType>
   <wsdl:binding name="HousesEndpointServiceSoapBinding" type="tns:HousesEndpoint">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="changeHousePhotoOne">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="changeHousePhotoOne">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:input>
+      <wsdl:output name="changeHousePhotoOneResponse">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeHousePhotoTwo">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="changeHousePhotoTwo">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:input>
+      <wsdl:output name="changeHousePhotoTwoResponse">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteHouse">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="deleteHouse">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:input>
+      <wsdl:output name="deleteHouseResponse">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createHouse">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="createHouse">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:input>
+      <wsdl:output name="createHouseResponse">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBetweenPrice">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input name="searchBetweenPrice">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:input>
+      <wsdl:output name="searchBetweenPriceResponse">
+        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="findById">
       <soap:operation soapAction="" style="rpc" />
       <wsdl:input name="findById">
@@ -248,12 +335,12 @@
         <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeHousePhotoOne">
+    <wsdl:operation name="searchHousesByString">
       <soap:operation soapAction="" style="rpc" />
-      <wsdl:input name="changeHousePhotoOne">
+      <wsdl:input name="searchHousesByString">
         <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
       </wsdl:input>
-      <wsdl:output name="changeHousePhotoOneResponse">
+      <wsdl:output name="searchHousesByStringResponse">
         <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
       </wsdl:output>
     </wsdl:operation>
@@ -293,21 +380,12 @@
         <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="changeHousePhotoTwo">
+    <wsdl:operation name="searchBetweenArea">
       <soap:operation soapAction="" style="rpc" />
-      <wsdl:input name="changeHousePhotoTwo">
+      <wsdl:input name="searchBetweenArea">
         <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
       </wsdl:input>
-      <wsdl:output name="changeHousePhotoTwoResponse">
-        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteHouse">
-      <soap:operation soapAction="" style="rpc" />
-      <wsdl:input name="deleteHouse">
-        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
-      </wsdl:input>
-      <wsdl:output name="deleteHouseResponse">
+      <wsdl:output name="searchBetweenAreaResponse">
         <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
       </wsdl:output>
     </wsdl:operation>
@@ -317,15 +395,6 @@
         <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
       </wsdl:input>
       <wsdl:output name="listAllResponse">
-        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createHouse">
-      <soap:operation soapAction="" style="rpc" />
-      <wsdl:input name="createHouse">
-        <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
-      </wsdl:input>
-      <wsdl:output name="createHouseResponse">
         <soap:body use="literal" namespace="http://endpoints.realestate.com.et/" />
       </wsdl:output>
     </wsdl:operation>
