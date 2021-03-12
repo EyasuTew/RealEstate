@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://endpoints.realestate.com.et/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="UserEndPointService" targetNamespace="http://endpoints.realestate.com.et/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://endpoints.realestate.com.et/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="activateUser" type="tns:activateUser" />
+      <xs:element name="activateUserResponse" type="tns:activateUserResponse" />
+      <xs:element name="auth" type="tns:auth" />
+      <xs:element name="authResponse" type="tns:authResponse" />
+      <xs:element name="changePasswordUser" type="tns:changePasswordUser" />
+      <xs:element name="changePasswordUserResponse" type="tns:changePasswordUserResponse" />
+      <xs:element name="createUser" type="tns:createUser" />
+      <xs:element name="createUserResponse" type="tns:createUserResponse" />
+      <xs:element name="deactivateUser" type="tns:deactivateUser" />
+      <xs:element name="deactivateUserResponse" type="tns:deactivateUserResponse" />
+      <xs:element name="deleteUser" type="tns:deleteUser" />
+      <xs:element name="deleteUserResponse" type="tns:deleteUserResponse" />
+      <xs:element name="findById" type="tns:findById" />
+      <xs:element name="findByIdResponse" type="tns:findByIdResponse" />
+      <xs:element name="listUser" type="tns:listUser" />
+      <xs:element name="listUserResponse" type="tns:listUserResponse" />
+      <xs:element name="me" type="tns:me" />
+      <xs:element name="meResponse" type="tns:meResponse" />
+      <xs:element name="paginationDto" type="tns:paginationDto" />
+      <xs:element name="responseDto" type="tns:responseDto" />
+      <xs:element name="updateUser" type="tns:updateUser" />
+      <xs:element name="updateUserResponse" type="tns:updateUserResponse" />
+      <xs:element name="userDto" type="tns:userDto" />
+      <xs:element name="userListResponseDto" type="tns:userListResponseDto" />
+      <xs:complexType name="auth">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthDto" type="tns:authDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="username" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:authResponseDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authResponseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element name="status" type="xs:boolean" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:long" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="activateUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:responseDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="responseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:long" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="userDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="company" type="xs:string" />
+          <xs:element minOccurs="0" name="createdat" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="email" type="xs:string" />
+          <xs:element minOccurs="0" name="fname" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="lname" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="phone" type="xs:string" />
+          <xs:element name="status" type="xs:boolean" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+          <xs:element minOccurs="0" name="username" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deactivateUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:long" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deactivateUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:responseDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="paginationDto" type="tns:paginationDto" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="paginationDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="count" type="xs:int" />
+          <xs:element minOccurs="0" name="max" type="xs:int" />
+          <xs:element minOccurs="0" name="start" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userListResponseDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="userListResponseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="paginationDto" type="tns:paginationDto" />
+          <xs:element minOccurs="0" name="responseDto" type="tns:responseDto" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="userDtoList" nillable="true" type="tns:userDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changePasswordUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="newPassword" type="xs:string" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changePasswordUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:responseDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userDto" type="tns:userDto" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:responseDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:long" />
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:responseDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="me">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="token" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="meResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userDto" type="tns:userDto" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:responseDto" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="auth">
+    <wsdl:part name="parameters" element="tns:auth" />
+  </wsdl:message>
+  <wsdl:message name="createUserResponse">
+    <wsdl:part name="parameters" element="tns:createUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="changePasswordUserResponse">
+    <wsdl:part name="parameters" element="tns:changePasswordUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="deactivateUser">
+    <wsdl:part name="parameters" element="tns:deactivateUser" />
+  </wsdl:message>
+  <wsdl:message name="listUserResponse">
+    <wsdl:part name="parameters" element="tns:listUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="meResponse">
+    <wsdl:part name="parameters" element="tns:meResponse" />
+  </wsdl:message>
+  <wsdl:message name="changePasswordUser">
+    <wsdl:part name="parameters" element="tns:changePasswordUser" />
+  </wsdl:message>
+  <wsdl:message name="updateUser">
+    <wsdl:part name="parameters" element="tns:updateUser" />
+  </wsdl:message>
+  <wsdl:message name="activateUser">
+    <wsdl:part name="parameters" element="tns:activateUser" />
+  </wsdl:message>
+  <wsdl:message name="findById">
+    <wsdl:part name="parameters" element="tns:findById" />
+  </wsdl:message>
+  <wsdl:message name="findByIdResponse">
+    <wsdl:part name="parameters" element="tns:findByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="activateUserResponse">
+    <wsdl:part name="parameters" element="tns:activateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="authResponse">
+    <wsdl:part name="parameters" element="tns:authResponse" />
+  </wsdl:message>
+  <wsdl:message name="listUser">
+    <wsdl:part name="parameters" element="tns:listUser" />
+  </wsdl:message>
+  <wsdl:message name="updateUserResponse">
+    <wsdl:part name="parameters" element="tns:updateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="deactivateUserResponse">
+    <wsdl:part name="parameters" element="tns:deactivateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUserResponse">
+    <wsdl:part name="parameters" element="tns:deleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUser">
+    <wsdl:part name="parameters" element="tns:deleteUser" />
+  </wsdl:message>
+  <wsdl:message name="me">
+    <wsdl:part name="parameters" element="tns:me" />
+  </wsdl:message>
+  <wsdl:message name="createUser">
+    <wsdl:part name="parameters" element="tns:createUser" />
+  </wsdl:message>
+  <wsdl:portType name="UserEndPoint">
+    <wsdl:operation name="auth">
+      <wsdl:input name="auth" message="tns:auth" />
+      <wsdl:output name="authResponse" message="tns:authResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="activateUser">
+      <wsdl:input name="activateUser" message="tns:activateUser" />
+      <wsdl:output name="activateUserResponse" message="tns:activateUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <wsdl:input name="findById" message="tns:findById" />
+      <wsdl:output name="findByIdResponse" message="tns:findByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deactivateUser">
+      <wsdl:input name="deactivateUser" message="tns:deactivateUser" />
+      <wsdl:output name="deactivateUserResponse" message="tns:deactivateUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listUser">
+      <wsdl:input name="listUser" message="tns:listUser" />
+      <wsdl:output name="listUserResponse" message="tns:listUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePasswordUser">
+      <wsdl:input name="changePasswordUser" message="tns:changePasswordUser" />
+      <wsdl:output name="changePasswordUserResponse" message="tns:changePasswordUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdl:input name="updateUser" message="tns:updateUser" />
+      <wsdl:output name="updateUserResponse" message="tns:updateUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <wsdl:input name="deleteUser" message="tns:deleteUser" />
+      <wsdl:output name="deleteUserResponse" message="tns:deleteUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="me">
+      <wsdl:input name="me" message="tns:me" />
+      <wsdl:output name="meResponse" message="tns:meResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <wsdl:input name="createUser" message="tns:createUser" />
+      <wsdl:output name="createUserResponse" message="tns:createUserResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserEndPointServiceSoapBinding" type="tns:UserEndPoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="auth">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="auth">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="authResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activateUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="activateUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="activateUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deactivateUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deactivateUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deactivateUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="listUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePasswordUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="changePasswordUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="changePasswordUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="me">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="me">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="meResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="createUser">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createUserResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserEndPointService">
+    <wsdl:port name="UserEndPointPort" binding="tns:UserEndPointServiceSoapBinding">
+      <soap:address location="http://172.17.221.193:8080/RealEstateBroker/UserEndPoint" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
