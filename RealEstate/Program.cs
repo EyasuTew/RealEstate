@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using RealEstate.UserEndPoint;
 namespace RealEstate
 {
     static class Program
@@ -22,15 +22,25 @@ namespace RealEstate
 
             if (File.Exists("token.txt"))
             {
-                Console.WriteLine("File exists...");
-                Application.Run(new Dashboard());
+                string token = File.ReadAllText("token.txt");
+                UserEndPointClient userClient = new UserEndPointClient();
+                userDto user=userClient.me(token);
+                if (user.type == "admin")
+                {
+                    Application.Run(new Admin());
+                }
+                else
+                {
+                    Application.Run(new Dashboard());
+                }
+                
             }
             else
             {
                 //this.Hide();
                 //Signin signIn = new Signin();
                 //signIn.Show();
-                Application.Run(new Signin());
+                Application.Run(new First());
 
                 //Console.WriteLine("File does not exist in the current directory!");
             }

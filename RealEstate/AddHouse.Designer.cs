@@ -270,12 +270,13 @@
             this.Back.TabIndex = 22;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
             // save
             // 
             this.save.Location = new System.Drawing.Point(240, 477);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(151, 35);
+            this.save.Size = new System.Drawing.Size(151, 23);
             this.save.TabIndex = 23;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
