@@ -410,17 +410,13 @@ namespace RealEstate.HousesEndpoint {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
     public partial class searachBetweenAreaDto : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private double fromField;
+        private string fromField;
         
-        private bool fromFieldSpecified;
-        
-        private double toField;
-        
-        private bool toFieldSpecified;
+        private string toField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public double from {
+        public string from {
             get {
                 return this.fromField;
             }
@@ -431,38 +427,14 @@ namespace RealEstate.HousesEndpoint {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fromSpecified {
-            get {
-                return this.fromFieldSpecified;
-            }
-            set {
-                this.fromFieldSpecified = value;
-                this.RaisePropertyChanged("fromSpecified");
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public double to {
+        public string to {
             get {
                 return this.toField;
             }
             set {
                 this.toField = value;
                 this.RaisePropertyChanged("to");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool toSpecified {
-            get {
-                return this.toFieldSpecified;
-            }
-            set {
-                this.toFieldSpecified = value;
-                this.RaisePropertyChanged("toSpecified");
             }
         }
         
@@ -1344,17 +1316,13 @@ namespace RealEstate.HousesEndpoint {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://endpoints.realestate.com.et/")]
     public partial class searchBetweenPriceDto : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private double fromField;
+        private string fromField;
         
-        private bool fromFieldSpecified;
-        
-        private double toField;
-        
-        private bool toFieldSpecified;
+        private string toField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public double from {
+        public string from {
             get {
                 return this.fromField;
             }
@@ -1365,38 +1333,14 @@ namespace RealEstate.HousesEndpoint {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fromSpecified {
-            get {
-                return this.fromFieldSpecified;
-            }
-            set {
-                this.fromFieldSpecified = value;
-                this.RaisePropertyChanged("fromSpecified");
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public double to {
+        public string to {
             get {
                 return this.toField;
             }
             set {
                 this.toField = value;
                 this.RaisePropertyChanged("to");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool toSpecified {
-            get {
-                return this.toFieldSpecified;
-            }
-            set {
-                this.toFieldSpecified = value;
-                this.RaisePropertyChanged("toSpecified");
             }
         }
         

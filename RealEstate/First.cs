@@ -118,6 +118,7 @@ namespace RealEstate
 
         private void button6_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
             HousesEndpointClient houseClient = new HousesEndpointClient();
             houseListResponseDto listHouse = houseClient.searchHousesByString(value.Text);
             if (listHouse.responseDto.status == false)
@@ -208,6 +209,7 @@ namespace RealEstate
 
         public void getSearchByBetweenArea(searachBetweenAreaDto searchByArea)
         {
+            panel1.Controls.Clear();
             HousesEndpointClient houseClient = new HousesEndpointClient();
             houseListResponseDto listHouse = houseClient.searchBetweenArea(searchByArea);
             if (listHouse.responseDto.status == false)
@@ -293,48 +295,48 @@ namespace RealEstate
         private void button1_Click(object sender, EventArgs e)
         {
             searchBetweenPriceDto search = new searchBetweenPriceDto();
-            search.from = 0;
-            search.to = 1000000;
+            search.from = "0";
+            search.to = "1000000";
             this.getSearchByBetweenPrice(search);
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             searachBetweenAreaDto search = new searachBetweenAreaDto();
-            search.from = 0;
-            search.to = 200;
+            search.from = "0";
+            search.to = "200";
             this.getSearchByBetweenArea(search);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             searachBetweenAreaDto search = new searachBetweenAreaDto();
-            search.from = 200;
-            search.to = 400;
+            search.from = "200";
+            search.to = "400";
             this.getSearchByBetweenArea(search);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             searachBetweenAreaDto search = new searachBetweenAreaDto();
-            search.from = 400;
-            search.to = 700;
+            search.from = "400";
+            search.to = "700";
             this.getSearchByBetweenArea(search);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             searachBetweenAreaDto search = new searachBetweenAreaDto();
-            search.from = 700;
-            search.to = 900;
+            search.from = "700";
+            search.to = "900";
             this.getSearchByBetweenArea(search);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             searachBetweenAreaDto search = new searachBetweenAreaDto();
-            search.from = 900;
-            search.to = 100000000000000;
+            search.from = "900";
+            search.to = "100000000000000";
             this.getSearchByBetweenArea(search);
         }
 
@@ -344,11 +346,9 @@ namespace RealEstate
             panel1.Controls.Clear();
             HousesEndpointClient houseClient = new HousesEndpointClient();
             houseListResponseDto listHouse = houseClient.searchBetweenPrice(searchByPrice);
-            Console.WriteLine("COUNT "+listHouse.paginationDto.count.ToString());
+            //Console.WriteLine("COUNT "+listHouse.housesDtoList.Length.ToString());
             if (listHouse.responseDto.status == false)
             {
-
-
             }
             else
             {
@@ -429,32 +429,32 @@ namespace RealEstate
         private void button2_Click(object sender, EventArgs e)
         {
             searchBetweenPriceDto search = new searchBetweenPriceDto();
-            search.from = 1000000;
-            search.to = 3000000;
+            search.from = "1000000";
+            search.to = "3000000";
             this.getSearchByBetweenPrice(search);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             searchBetweenPriceDto search = new searchBetweenPriceDto();
-            search.from = 3000000;
-            search.to = 6000000;
+            search.from = "3000000";
+            search.to = "6000000";
             this.getSearchByBetweenPrice(search);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             searchBetweenPriceDto search = new searchBetweenPriceDto();
-            search.from = 6000000;
-            search.to = 9000000;
+            search.from = "6000000";
+            search.to = "9000000";
             this.getSearchByBetweenPrice(search);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             searchBetweenPriceDto search = new searchBetweenPriceDto();
-            search.from = 9000000;
-            search.to = 100000000000000000;
+            search.from = "9000000";
+            search.to = "1000000000000000";
             this.getSearchByBetweenPrice(search);
         }
     }

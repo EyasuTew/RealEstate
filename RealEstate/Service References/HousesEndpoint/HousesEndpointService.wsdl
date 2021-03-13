@@ -9,6 +9,8 @@
       <xs:element name="housesUpdateRequestDto" type="tns:housesUpdateRequestDto" />
       <xs:element name="paginationDto" type="tns:paginationDto" />
       <xs:element name="responseDto" type="tns:responseDto" />
+      <xs:element name="searachBetweenAreaDto" type="tns:searachBetweenAreaDto" />
+      <xs:element name="searchBetweenPriceDto" type="tns:searchBetweenPriceDto" />
       <xs:element name="userDto" type="tns:userDto" />
       <xs:complexType name="responseDto">
         <xs:sequence>
@@ -36,8 +38,8 @@
       </xs:complexType>
       <xs:complexType name="searchBetweenPriceDto">
         <xs:sequence>
-          <xs:element minOccurs="0" name="from" type="xs:double" />
-          <xs:element minOccurs="0" name="to" type="xs:double" />
+          <xs:element minOccurs="0" name="from" type="xs:string" />
+          <xs:element minOccurs="0" name="to" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="houseListResponseDto">
@@ -106,8 +108,8 @@
       </xs:complexType>
       <xs:complexType name="searachBetweenAreaDto">
         <xs:sequence>
-          <xs:element minOccurs="0" name="from" type="xs:double" />
-          <xs:element minOccurs="0" name="to" type="xs:double" />
+          <xs:element minOccurs="0" name="from" type="xs:string" />
+          <xs:element minOccurs="0" name="to" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="houseQueryDto">
