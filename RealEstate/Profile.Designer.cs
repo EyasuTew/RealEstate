@@ -51,6 +51,7 @@
             this.changepassword = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.oldpassword = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // update
@@ -251,11 +252,24 @@
             this.oldpassword.Size = new System.Drawing.Size(191, 20);
             this.oldpassword.TabIndex = 41;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(258, 12);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(134, 31);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "My Profile";
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 498);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.oldpassword);
             this.Controls.Add(this.changepassword);
@@ -312,5 +326,6 @@
         private System.Windows.Forms.Button changepassword;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox oldpassword;
+        private System.Windows.Forms.Label label13;
     }
 }

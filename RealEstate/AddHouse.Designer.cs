@@ -54,6 +54,7 @@
             this.save = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.company = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -298,11 +299,24 @@
             this.company.Size = new System.Drawing.Size(177, 20);
             this.company.TabIndex = 24;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(313, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(202, 31);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Register House";
+            // 
             // AddHouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 587);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.company);
             this.Controls.Add(this.save);
@@ -367,5 +381,6 @@
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox company;
+        private System.Windows.Forms.Label label13;
     }
 }

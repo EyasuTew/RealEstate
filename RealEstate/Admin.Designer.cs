@@ -32,6 +32,7 @@
             this.home = new System.Windows.Forms.Button();
             this.signout = new System.Windows.Forms.Button();
             this.profile = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,11 +74,24 @@
             this.profile.UseVisualStyleBackColor = true;
             this.profile.Click += new System.EventHandler(this.profile_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(135, 12);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(230, 31);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Admin Dashboard";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 573);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.profile);
             this.Controls.Add(this.signout);
             this.Controls.Add(this.home);
@@ -86,6 +100,7 @@
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,5 +110,6 @@
         private System.Windows.Forms.Button home;
         private System.Windows.Forms.Button signout;
         private System.Windows.Forms.Button profile;
+        private System.Windows.Forms.Label label13;
     }
 }

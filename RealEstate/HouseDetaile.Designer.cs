@@ -55,6 +55,7 @@
             this.priceheactar = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
             this.Back = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -312,11 +313,24 @@
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(228, 12);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(185, 31);
+            this.label14.TabIndex = 85;
+            this.label14.Text = "House Detaile";
+            // 
             // HouseDetaile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 687);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.status);
             this.Controls.Add(this.label13);
@@ -383,5 +397,6 @@
         private System.Windows.Forms.TextBox priceheactar;
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.Label label14;
     }
 }

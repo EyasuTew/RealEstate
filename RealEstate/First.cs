@@ -21,6 +21,8 @@ namespace RealEstate
 
         private void First_Load(object sender, EventArgs e)
         {
+
+            try { 
             //string token = File.ReadAllText("token.txt");
             HousesEndpointClient houseClient = new HousesEndpointClient();
             paginationDto pag = new paginationDto();
@@ -106,6 +108,13 @@ namespace RealEstate
                     y += Math.Max(dy1, dy2) + delta;
                 }
 
+            }
+            }
+            catch
+            {
+                MessageBox.Show("Unknown error", "Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Application.Run(new First());
             }
         }
 

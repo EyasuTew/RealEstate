@@ -33,6 +33,7 @@
             this.add = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.profile = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // signOut
@@ -84,11 +85,24 @@
             this.profile.UseVisualStyleBackColor = true;
             this.profile.Click += new System.EventHandler(this.profile_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(186, 78);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(147, 31);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Dashboard";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 620);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.profile);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.add);
@@ -100,6 +114,7 @@
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,5 +125,6 @@
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button profile;
+        private System.Windows.Forms.Label label13;
     }
 }

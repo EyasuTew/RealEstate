@@ -15,6 +15,10 @@ namespace RealEstate
         [STAThread]
         static void Main()
         {
+            try
+            {
+
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
@@ -43,6 +47,13 @@ namespace RealEstate
                 Application.Run(new First());
 
                 //Console.WriteLine("File does not exist in the current directory!");
+            }
+            }
+            catch
+            {
+                MessageBox.Show("Unknown error", "Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Run(new First());
             }
         }
     }

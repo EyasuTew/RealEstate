@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.status = new System.Windows.Forms.Label();
             this.changestatus = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // update
@@ -196,11 +197,24 @@
             this.changestatus.UseVisualStyleBackColor = true;
             this.changestatus.Click += new System.EventHandler(this.changestatus_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(246, 12);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(164, 31);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "User Detaile";
+            // 
             // UserDetaile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 499);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.changestatus);
             this.Controls.Add(this.status);
             this.Controls.Add(this.label2);
@@ -245,5 +259,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.Button changestatus;
+        private System.Windows.Forms.Label label13;
     }
 }
