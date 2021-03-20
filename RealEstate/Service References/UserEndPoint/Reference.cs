@@ -15,95 +15,95 @@ namespace RealEstate.UserEndPoint {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://endpoints.realestate.com.et/", ConfigurationName="UserEndPoint.UserEndPoint")]
     public interface UserEndPoint {
         
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.authResponse auth(RealEstate.UserEndPoint.auth request);
+        RealEstate.UserEndPoint.authResponseDto auth(RealEstate.UserEndPoint.authDto AuthDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.authResponse> authAsync(RealEstate.UserEndPoint.auth request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.activateUserResponse activateUser(RealEstate.UserEndPoint.activateUser request);
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.authResponseDto> authAsync(RealEstate.UserEndPoint.authDto AuthDto);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.activateUserResponse> activateUserAsync(RealEstate.UserEndPoint.activateUser request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.findByIdResponse findById(RealEstate.UserEndPoint.findById request);
+        RealEstate.UserEndPoint.responseDto activateUser(long userId, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.findByIdResponse> findByIdAsync(RealEstate.UserEndPoint.findById request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.deactivateUserResponse deactivateUser(RealEstate.UserEndPoint.deactivateUser request);
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> activateUserAsync(long userId, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.deactivateUserResponse> deactivateUserAsync(RealEstate.UserEndPoint.deactivateUser request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.listUserResponse listUser(RealEstate.UserEndPoint.listUser request);
+        RealEstate.UserEndPoint.userDto findById(long userId, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.listUserResponse> listUserAsync(RealEstate.UserEndPoint.listUser request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.changePasswordUserResponse changePasswordUser(RealEstate.UserEndPoint.changePasswordUser request);
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.userDto> findByIdAsync(long userId, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.changePasswordUserResponse> changePasswordUserAsync(RealEstate.UserEndPoint.changePasswordUser request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.updateUserResponse updateUser(RealEstate.UserEndPoint.updateUser request);
+        RealEstate.UserEndPoint.responseDto deactivateUser(long userId, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.updateUserResponse> updateUserAsync(RealEstate.UserEndPoint.updateUser request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.deleteUserResponse deleteUser(RealEstate.UserEndPoint.deleteUser request);
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> deactivateUserAsync(long userId, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.deleteUserResponse> deleteUserAsync(RealEstate.UserEndPoint.deleteUser request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.meResponse me(RealEstate.UserEndPoint.me request);
+        RealEstate.UserEndPoint.userListResponseDto listUser(RealEstate.UserEndPoint.paginationDto paginationDto, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.meResponse> meAsync(RealEstate.UserEndPoint.me request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.UserEndPoint.createUserResponse createUser(RealEstate.UserEndPoint.createUser request);
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.userListResponseDto> listUserAsync(RealEstate.UserEndPoint.paginationDto paginationDto, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.createUserResponse> createUserAsync(RealEstate.UserEndPoint.createUser request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.UserEndPoint.responseDto changePasswordUser(string newPassword, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> changePasswordUserAsync(string newPassword, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.UserEndPoint.responseDto updateUser(RealEstate.UserEndPoint.userDto userDto, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> updateUserAsync(RealEstate.UserEndPoint.userDto userDto, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.UserEndPoint.responseDto deleteUser(long userId, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> deleteUserAsync(long userId, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.UserEndPoint.userDto me(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.userDto> meAsync(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        RealEstate.UserEndPoint.responseDto createUser(RealEstate.UserEndPoint.userDto userDto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> createUserAsync(RealEstate.UserEndPoint.userDto userDto);
     }
     
     /// <remarks/>
@@ -648,401 +648,6 @@ namespace RealEstate.UserEndPoint {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="auth", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class auth {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.authDto AuthDto;
-        
-        public auth() {
-        }
-        
-        public auth(RealEstate.UserEndPoint.authDto AuthDto) {
-            this.AuthDto = AuthDto;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="authResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class authResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.authResponseDto @return;
-        
-        public authResponse() {
-        }
-        
-        public authResponse(RealEstate.UserEndPoint.authResponseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="activateUser", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class activateUser {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long userId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string token;
-        
-        public activateUser() {
-        }
-        
-        public activateUser(long userId, string token) {
-            this.userId = userId;
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="activateUserResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class activateUserResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.responseDto @return;
-        
-        public activateUserResponse() {
-        }
-        
-        public activateUserResponse(RealEstate.UserEndPoint.responseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findById", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class findById {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long userId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string token;
-        
-        public findById() {
-        }
-        
-        public findById(long userId, string token) {
-            this.userId = userId;
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findByIdResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class findByIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.userDto @return;
-        
-        public findByIdResponse() {
-        }
-        
-        public findByIdResponse(RealEstate.UserEndPoint.userDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deactivateUser", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class deactivateUser {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long userId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string token;
-        
-        public deactivateUser() {
-        }
-        
-        public deactivateUser(long userId, string token) {
-            this.userId = userId;
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deactivateUserResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class deactivateUserResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.responseDto @return;
-        
-        public deactivateUserResponse() {
-        }
-        
-        public deactivateUserResponse(RealEstate.UserEndPoint.responseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listUser", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class listUser {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.paginationDto paginationDto;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string token;
-        
-        public listUser() {
-        }
-        
-        public listUser(RealEstate.UserEndPoint.paginationDto paginationDto, string token) {
-            this.paginationDto = paginationDto;
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listUserResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class listUserResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.userListResponseDto @return;
-        
-        public listUserResponse() {
-        }
-        
-        public listUserResponse(RealEstate.UserEndPoint.userListResponseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="changePasswordUser", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class changePasswordUser {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string newPassword;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string token;
-        
-        public changePasswordUser() {
-        }
-        
-        public changePasswordUser(string newPassword, string token) {
-            this.newPassword = newPassword;
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="changePasswordUserResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class changePasswordUserResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.responseDto @return;
-        
-        public changePasswordUserResponse() {
-        }
-        
-        public changePasswordUserResponse(RealEstate.UserEndPoint.responseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="updateUser", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class updateUser {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.userDto userDto;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string token;
-        
-        public updateUser() {
-        }
-        
-        public updateUser(RealEstate.UserEndPoint.userDto userDto, string token) {
-            this.userDto = userDto;
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="updateUserResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class updateUserResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.responseDto @return;
-        
-        public updateUserResponse() {
-        }
-        
-        public updateUserResponse(RealEstate.UserEndPoint.responseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteUser", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class deleteUser {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long userId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string token;
-        
-        public deleteUser() {
-        }
-        
-        public deleteUser(long userId, string token) {
-            this.userId = userId;
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteUserResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class deleteUserResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.responseDto @return;
-        
-        public deleteUserResponse() {
-        }
-        
-        public deleteUserResponse(RealEstate.UserEndPoint.responseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="me", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class me {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string token;
-        
-        public me() {
-        }
-        
-        public me(string token) {
-            this.token = token;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="meResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class meResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.userDto @return;
-        
-        public meResponse() {
-        }
-        
-        public meResponse(RealEstate.UserEndPoint.userDto @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="createUser", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class createUser {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.userDto userDto;
-        
-        public createUser() {
-        }
-        
-        public createUser(RealEstate.UserEndPoint.userDto userDto) {
-            this.userDto = userDto;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="createUserResponse", WrapperNamespace="http://endpoints.realestate.com.et/", IsWrapped=true)]
-    public partial class createUserResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://endpoints.realestate.com.et/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public RealEstate.UserEndPoint.responseDto @return;
-        
-        public createUserResponse() {
-        }
-        
-        public createUserResponse(RealEstate.UserEndPoint.responseDto @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface UserEndPointChannel : RealEstate.UserEndPoint.UserEndPoint, System.ServiceModel.IClientChannel {
     }
@@ -1070,248 +675,84 @@ namespace RealEstate.UserEndPoint {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.authResponse RealEstate.UserEndPoint.UserEndPoint.auth(RealEstate.UserEndPoint.auth request) {
-            return base.Channel.auth(request);
-        }
-        
         public RealEstate.UserEndPoint.authResponseDto auth(RealEstate.UserEndPoint.authDto AuthDto) {
-            RealEstate.UserEndPoint.auth inValue = new RealEstate.UserEndPoint.auth();
-            inValue.AuthDto = AuthDto;
-            RealEstate.UserEndPoint.authResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).auth(inValue);
-            return retVal.@return;
+            return base.Channel.auth(AuthDto);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.authResponse> RealEstate.UserEndPoint.UserEndPoint.authAsync(RealEstate.UserEndPoint.auth request) {
-            return base.Channel.authAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.authResponse> authAsync(RealEstate.UserEndPoint.authDto AuthDto) {
-            RealEstate.UserEndPoint.auth inValue = new RealEstate.UserEndPoint.auth();
-            inValue.AuthDto = AuthDto;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).authAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.activateUserResponse RealEstate.UserEndPoint.UserEndPoint.activateUser(RealEstate.UserEndPoint.activateUser request) {
-            return base.Channel.activateUser(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.authResponseDto> authAsync(RealEstate.UserEndPoint.authDto AuthDto) {
+            return base.Channel.authAsync(AuthDto);
         }
         
         public RealEstate.UserEndPoint.responseDto activateUser(long userId, string token) {
-            RealEstate.UserEndPoint.activateUser inValue = new RealEstate.UserEndPoint.activateUser();
-            inValue.userId = userId;
-            inValue.token = token;
-            RealEstate.UserEndPoint.activateUserResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).activateUser(inValue);
-            return retVal.@return;
+            return base.Channel.activateUser(userId, token);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.activateUserResponse> RealEstate.UserEndPoint.UserEndPoint.activateUserAsync(RealEstate.UserEndPoint.activateUser request) {
-            return base.Channel.activateUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.activateUserResponse> activateUserAsync(long userId, string token) {
-            RealEstate.UserEndPoint.activateUser inValue = new RealEstate.UserEndPoint.activateUser();
-            inValue.userId = userId;
-            inValue.token = token;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).activateUserAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.findByIdResponse RealEstate.UserEndPoint.UserEndPoint.findById(RealEstate.UserEndPoint.findById request) {
-            return base.Channel.findById(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> activateUserAsync(long userId, string token) {
+            return base.Channel.activateUserAsync(userId, token);
         }
         
         public RealEstate.UserEndPoint.userDto findById(long userId, string token) {
-            RealEstate.UserEndPoint.findById inValue = new RealEstate.UserEndPoint.findById();
-            inValue.userId = userId;
-            inValue.token = token;
-            RealEstate.UserEndPoint.findByIdResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).findById(inValue);
-            return retVal.@return;
+            return base.Channel.findById(userId, token);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.findByIdResponse> RealEstate.UserEndPoint.UserEndPoint.findByIdAsync(RealEstate.UserEndPoint.findById request) {
-            return base.Channel.findByIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.findByIdResponse> findByIdAsync(long userId, string token) {
-            RealEstate.UserEndPoint.findById inValue = new RealEstate.UserEndPoint.findById();
-            inValue.userId = userId;
-            inValue.token = token;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).findByIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.deactivateUserResponse RealEstate.UserEndPoint.UserEndPoint.deactivateUser(RealEstate.UserEndPoint.deactivateUser request) {
-            return base.Channel.deactivateUser(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.userDto> findByIdAsync(long userId, string token) {
+            return base.Channel.findByIdAsync(userId, token);
         }
         
         public RealEstate.UserEndPoint.responseDto deactivateUser(long userId, string token) {
-            RealEstate.UserEndPoint.deactivateUser inValue = new RealEstate.UserEndPoint.deactivateUser();
-            inValue.userId = userId;
-            inValue.token = token;
-            RealEstate.UserEndPoint.deactivateUserResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).deactivateUser(inValue);
-            return retVal.@return;
+            return base.Channel.deactivateUser(userId, token);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.deactivateUserResponse> RealEstate.UserEndPoint.UserEndPoint.deactivateUserAsync(RealEstate.UserEndPoint.deactivateUser request) {
-            return base.Channel.deactivateUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.deactivateUserResponse> deactivateUserAsync(long userId, string token) {
-            RealEstate.UserEndPoint.deactivateUser inValue = new RealEstate.UserEndPoint.deactivateUser();
-            inValue.userId = userId;
-            inValue.token = token;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).deactivateUserAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.listUserResponse RealEstate.UserEndPoint.UserEndPoint.listUser(RealEstate.UserEndPoint.listUser request) {
-            return base.Channel.listUser(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> deactivateUserAsync(long userId, string token) {
+            return base.Channel.deactivateUserAsync(userId, token);
         }
         
         public RealEstate.UserEndPoint.userListResponseDto listUser(RealEstate.UserEndPoint.paginationDto paginationDto, string token) {
-            RealEstate.UserEndPoint.listUser inValue = new RealEstate.UserEndPoint.listUser();
-            inValue.paginationDto = paginationDto;
-            inValue.token = token;
-            RealEstate.UserEndPoint.listUserResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).listUser(inValue);
-            return retVal.@return;
+            return base.Channel.listUser(paginationDto, token);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.listUserResponse> RealEstate.UserEndPoint.UserEndPoint.listUserAsync(RealEstate.UserEndPoint.listUser request) {
-            return base.Channel.listUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.listUserResponse> listUserAsync(RealEstate.UserEndPoint.paginationDto paginationDto, string token) {
-            RealEstate.UserEndPoint.listUser inValue = new RealEstate.UserEndPoint.listUser();
-            inValue.paginationDto = paginationDto;
-            inValue.token = token;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).listUserAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.changePasswordUserResponse RealEstate.UserEndPoint.UserEndPoint.changePasswordUser(RealEstate.UserEndPoint.changePasswordUser request) {
-            return base.Channel.changePasswordUser(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.userListResponseDto> listUserAsync(RealEstate.UserEndPoint.paginationDto paginationDto, string token) {
+            return base.Channel.listUserAsync(paginationDto, token);
         }
         
         public RealEstate.UserEndPoint.responseDto changePasswordUser(string newPassword, string token) {
-            RealEstate.UserEndPoint.changePasswordUser inValue = new RealEstate.UserEndPoint.changePasswordUser();
-            inValue.newPassword = newPassword;
-            inValue.token = token;
-            RealEstate.UserEndPoint.changePasswordUserResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).changePasswordUser(inValue);
-            return retVal.@return;
+            return base.Channel.changePasswordUser(newPassword, token);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.changePasswordUserResponse> RealEstate.UserEndPoint.UserEndPoint.changePasswordUserAsync(RealEstate.UserEndPoint.changePasswordUser request) {
-            return base.Channel.changePasswordUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.changePasswordUserResponse> changePasswordUserAsync(string newPassword, string token) {
-            RealEstate.UserEndPoint.changePasswordUser inValue = new RealEstate.UserEndPoint.changePasswordUser();
-            inValue.newPassword = newPassword;
-            inValue.token = token;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).changePasswordUserAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.updateUserResponse RealEstate.UserEndPoint.UserEndPoint.updateUser(RealEstate.UserEndPoint.updateUser request) {
-            return base.Channel.updateUser(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> changePasswordUserAsync(string newPassword, string token) {
+            return base.Channel.changePasswordUserAsync(newPassword, token);
         }
         
         public RealEstate.UserEndPoint.responseDto updateUser(RealEstate.UserEndPoint.userDto userDto, string token) {
-            RealEstate.UserEndPoint.updateUser inValue = new RealEstate.UserEndPoint.updateUser();
-            inValue.userDto = userDto;
-            inValue.token = token;
-            RealEstate.UserEndPoint.updateUserResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).updateUser(inValue);
-            return retVal.@return;
+            return base.Channel.updateUser(userDto, token);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.updateUserResponse> RealEstate.UserEndPoint.UserEndPoint.updateUserAsync(RealEstate.UserEndPoint.updateUser request) {
-            return base.Channel.updateUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.updateUserResponse> updateUserAsync(RealEstate.UserEndPoint.userDto userDto, string token) {
-            RealEstate.UserEndPoint.updateUser inValue = new RealEstate.UserEndPoint.updateUser();
-            inValue.userDto = userDto;
-            inValue.token = token;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).updateUserAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.deleteUserResponse RealEstate.UserEndPoint.UserEndPoint.deleteUser(RealEstate.UserEndPoint.deleteUser request) {
-            return base.Channel.deleteUser(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> updateUserAsync(RealEstate.UserEndPoint.userDto userDto, string token) {
+            return base.Channel.updateUserAsync(userDto, token);
         }
         
         public RealEstate.UserEndPoint.responseDto deleteUser(long userId, string token) {
-            RealEstate.UserEndPoint.deleteUser inValue = new RealEstate.UserEndPoint.deleteUser();
-            inValue.userId = userId;
-            inValue.token = token;
-            RealEstate.UserEndPoint.deleteUserResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).deleteUser(inValue);
-            return retVal.@return;
+            return base.Channel.deleteUser(userId, token);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.deleteUserResponse> RealEstate.UserEndPoint.UserEndPoint.deleteUserAsync(RealEstate.UserEndPoint.deleteUser request) {
-            return base.Channel.deleteUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.deleteUserResponse> deleteUserAsync(long userId, string token) {
-            RealEstate.UserEndPoint.deleteUser inValue = new RealEstate.UserEndPoint.deleteUser();
-            inValue.userId = userId;
-            inValue.token = token;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).deleteUserAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.meResponse RealEstate.UserEndPoint.UserEndPoint.me(RealEstate.UserEndPoint.me request) {
-            return base.Channel.me(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> deleteUserAsync(long userId, string token) {
+            return base.Channel.deleteUserAsync(userId, token);
         }
         
         public RealEstate.UserEndPoint.userDto me(string token) {
-            RealEstate.UserEndPoint.me inValue = new RealEstate.UserEndPoint.me();
-            inValue.token = token;
-            RealEstate.UserEndPoint.meResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).me(inValue);
-            return retVal.@return;
+            return base.Channel.me(token);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.meResponse> RealEstate.UserEndPoint.UserEndPoint.meAsync(RealEstate.UserEndPoint.me request) {
-            return base.Channel.meAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.meResponse> meAsync(string token) {
-            RealEstate.UserEndPoint.me inValue = new RealEstate.UserEndPoint.me();
-            inValue.token = token;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).meAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        RealEstate.UserEndPoint.createUserResponse RealEstate.UserEndPoint.UserEndPoint.createUser(RealEstate.UserEndPoint.createUser request) {
-            return base.Channel.createUser(request);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.userDto> meAsync(string token) {
+            return base.Channel.meAsync(token);
         }
         
         public RealEstate.UserEndPoint.responseDto createUser(RealEstate.UserEndPoint.userDto userDto) {
-            RealEstate.UserEndPoint.createUser inValue = new RealEstate.UserEndPoint.createUser();
-            inValue.userDto = userDto;
-            RealEstate.UserEndPoint.createUserResponse retVal = ((RealEstate.UserEndPoint.UserEndPoint)(this)).createUser(inValue);
-            return retVal.@return;
+            return base.Channel.createUser(userDto);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<RealEstate.UserEndPoint.createUserResponse> RealEstate.UserEndPoint.UserEndPoint.createUserAsync(RealEstate.UserEndPoint.createUser request) {
-            return base.Channel.createUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.createUserResponse> createUserAsync(RealEstate.UserEndPoint.userDto userDto) {
-            RealEstate.UserEndPoint.createUser inValue = new RealEstate.UserEndPoint.createUser();
-            inValue.userDto = userDto;
-            return ((RealEstate.UserEndPoint.UserEndPoint)(this)).createUserAsync(inValue);
+        public System.Threading.Tasks.Task<RealEstate.UserEndPoint.responseDto> createUserAsync(RealEstate.UserEndPoint.userDto userDto) {
+            return base.Channel.createUserAsync(userDto);
         }
     }
 }

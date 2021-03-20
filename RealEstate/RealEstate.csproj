@@ -205,40 +205,10 @@
     <None Include="Service References\HousesEndpoint\RealEstate.HousesEndpoint.responseDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.activateUserResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.authResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.authResponseDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.changePasswordUserResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.createUserResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.deactivateUserResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.deleteUserResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.findByIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.listUserResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.meResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.responseDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.updateUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\UserEndPoint\RealEstate.UserEndPoint.userDto.datasource">

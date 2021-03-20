@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.update = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,6 +53,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.oldpassword = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // update
@@ -131,11 +134,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(430, 119);
+            this.label2.Location = new System.Drawing.Point(405, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 27;
-            this.label2.Text = "Password";
+            this.label2.Text = "New Password";
             // 
             // label1
             // 
@@ -264,6 +267,10 @@
             this.label13.TabIndex = 43;
             this.label13.Text = "My Profile";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +303,7 @@
             this.Name = "Profile";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +335,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox oldpassword;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

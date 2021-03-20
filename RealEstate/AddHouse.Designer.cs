@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.name = new System.Windows.Forms.TextBox();
             this.priceheactar = new System.Windows.Forms.TextBox();
             this.totalprice = new System.Windows.Forms.TextBox();
@@ -55,9 +56,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.company = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // name
@@ -311,6 +314,10 @@
             this.label13.TabIndex = 27;
             this.label13.Text = "Register House";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AddHouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +355,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,5 +390,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox company;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

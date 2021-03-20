@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RealEstate.HousesEndpoint;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace RealEstate
 {
@@ -148,13 +149,14 @@ namespace RealEstate
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try { 
             string token = File.ReadAllText("token.txt");
             Bitmap twoB = new Bitmap(pictureBox2.ImageLocation);
             ImageConverter converter2 = new ImageConverter();
             byte[] two = (byte[])converter2.ConvertTo(twoB, typeof(byte[]));
 
             HousesEndpointClient hu = new HousesEndpointClient();
-            responseDto re = hu.changeHousePhotoOne(houseCurrentNow.id, two, token);
+            responseDto re = hu.changeHousePhotoTwo(houseCurrentNow.id, two, token);
             if (re.status == true)
             {
                 DialogResult result = MessageBox.Show(
@@ -168,6 +170,13 @@ namespace RealEstate
                 DialogResult result = MessageBox.Show(
                                     re.message, "Success", MessageBoxButtons.OKCancel,
                                     MessageBoxIcon.Error);
+            }
+            }
+            catch
+            {
+                DialogResult result = MessageBox.Show(
+                                        "Unknown error", "Exception", MessageBoxButtons.OKCancel,
+                                        MessageBoxIcon.Error);
             }
         }
 
@@ -227,8 +236,8 @@ namespace RealEstate
                 if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     imageLocation = dialog.FileName;
-
-                    pictureBox2.ImageLocation = imageLocation;
+        
+                    pictureBox3.ImageLocation = imageLocation;
 
                     //Console.Write(photo1.ImageLocation);
                 }
@@ -242,54 +251,72 @@ namespace RealEstate
 
         private void change1_Click(object sender, EventArgs e)
         {
-            string token = File.ReadAllText("token.txt");
-            Bitmap oneB = new Bitmap(pictureBox1.ImageLocation);
-            ImageConverter converter = new ImageConverter();
-            byte[] one = (byte[])converter.ConvertTo(oneB, typeof(byte[]));
-            //house.photoone = one;
+            try
+            {
+                string token = File.ReadAllText("token.txt");
+                Bitmap oneB = new Bitmap(pictureBox1.ImageLocation);
+                ImageConverter converter = new ImageConverter();
+                byte[] one = (byte[])converter.ConvertTo(oneB, typeof(byte[]));
+                //house.photoone = one;
 
-            HousesEndpointClient hu = new HousesEndpointClient();
-            responseDto re= hu.changeHousePhotoOne(houseCurrentNow.id,one,token);
-            if (re.status == true)
-            {
-                DialogResult result = MessageBox.Show(
-                                    re.message, "Success", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                this.Hide();
-                Dashboard dh = new Dashboard();
-                dh.Show();
+                HousesEndpointClient hu = new HousesEndpointClient();
+                responseDto re = hu.changeHousePhotoOne(houseCurrentNow.id, one, token);
+                if (re.status == true)
+                {
+                    DialogResult result = MessageBox.Show(
+                                        re.message, "Success", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    this.Hide();
+                    Dashboard dh = new Dashboard();
+                    dh.Show();
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show(
+                                        re.message, "Success", MessageBoxButtons.OKCancel,
+                                        MessageBoxIcon.Error);
+                }
             }
-            else
+            catch
             {
                 DialogResult result = MessageBox.Show(
-                                    re.message, "Success", MessageBoxButtons.OKCancel,
-                                    MessageBoxIcon.Error);
+                                        "Unknown error", "Exception", MessageBoxButtons.OKCancel,
+                                        MessageBoxIcon.Error);
             }
         }
 
         private void change3_Click(object sender, EventArgs e)
         {
-            string token = File.ReadAllText("token.txt");
-            Bitmap threeB = new Bitmap(pictureBox3.ImageLocation);
-            ImageConverter converter3 = new ImageConverter();
-            byte[] three = (byte[])converter3.ConvertTo(threeB, typeof(byte[]));
+            try { 
+                string token = File.ReadAllText("token.txt");
+                Bitmap threeB = new Bitmap(pictureBox3.ImageLocation);
+                ImageConverter converter3 = new ImageConverter();
+                byte[] three = (byte[])converter3.ConvertTo(threeB, typeof(byte[]));
             
 
-            HousesEndpointClient hu = new HousesEndpointClient();
-            responseDto re = hu.changeHousePhotoOne(houseCurrentNow.id, three, token);
-            if (re.status == true)
+                HousesEndpointClient hu = new HousesEndpointClient();
+                responseDto re = hu.changeHousePhotoThree(houseCurrentNow.id, three, token);
+                if (re.status == true)
+                {
+                    DialogResult result = MessageBox.Show(
+                                        re.message, "Success", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    this.Hide();
+                    Dashboard dh = new Dashboard();
+                    dh.Show();
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show(
+                                        re.message, "Success", MessageBoxButtons.OKCancel,
+                                        MessageBoxIcon.Error);
+                }
+            }
+            catch
             {
                 DialogResult result = MessageBox.Show(
-                                    re.message, "Success", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                this.Hide();
-                Dashboard dh = new Dashboard();
-                dh.Show();
+                                        "Unknown error", "Exception", MessageBoxButtons.OKCancel,
+                                        MessageBoxIcon.Error);
             }
-            else
-            {
-                DialogResult result = MessageBox.Show(
-                                    re.message, "Success", MessageBoxButtons.OKCancel,
-                                    MessageBoxIcon.Error);
-            }
+
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -297,6 +324,140 @@ namespace RealEstate
             this.Hide();
             Dashboard dash = new Dashboard();
             dash.Show();
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+
+            Boolean vname = false;
+            if (string.IsNullOrWhiteSpace(name.Text) | name.Text.Length < 4)
+            {
+                vname = false; name.Focus(); errorProvider1.SetError(name, "Name should contain at least four character.");
+            }
+            else
+            {
+                vname = true; errorProvider1.SetError(name, "");
+            }
+
+            Boolean vtype = false;
+            if (string.IsNullOrWhiteSpace(type.Text) | type.Text.Length < 3)
+            {
+                vtype = false; type.Focus(); errorProvider1.SetError(type, "Type should be selected.");
+            }
+            else
+            {
+                vtype = true; errorProvider1.SetError(type, "");
+            }
+
+            Boolean vfor = false;
+            if (string.IsNullOrWhiteSpace(for_.Text) | for_.Text.Length < 3)
+            {
+                vfor = false; type.Focus(); errorProvider1.SetError(for_, "Type should be selected.");
+            }
+            else
+            {
+                vfor = true; errorProvider1.SetError(for_, "");
+            }
+            Boolean vlocation = false;
+            if (string.IsNullOrWhiteSpace(location.Text) | location.Text.Length < 4)
+            {
+                vlocation = false; location.Focus(); errorProvider1.SetError(location, "Loation should contain at least four character.");
+            }
+            else
+            {
+                vlocation = true; errorProvider1.SetError(location, "");
+            }
+            Boolean varea = false;
+            if (string.IsNullOrWhiteSpace(area.Text) | !Regex.IsMatch(totalprice.Text, @"[0-9]{1,20}"))
+            {
+                varea = false; location.Focus(); errorProvider1.SetError(area,
+                    "Area should be number.");
+            }
+            else
+            {
+                varea = true; errorProvider1.SetError(area, "");
+            }
+            Boolean vpriceperhectar = false;
+            if (string.IsNullOrWhiteSpace(priceheactar.Text) | !Regex.IsMatch(totalprice.Text, @"[0-9]{1,20}"))
+            {
+                vpriceperhectar = false; location.Focus(); errorProvider1.SetError(priceheactar,
+                    "Price per hectar should be number.");
+            }
+            else
+            {
+                vpriceperhectar = true; errorProvider1.SetError(priceheactar, "");
+            }
+
+            Boolean vtotalprice = false;
+            if (string.IsNullOrWhiteSpace(totalprice.Text) | !Regex.IsMatch(totalprice.Text, @"[0-9]{1,20}"))
+            {
+                vtotalprice = false; totalprice.Focus(); errorProvider1.SetError(totalprice,
+                    "Total price should be number.");
+            }
+            else
+            {
+                vtotalprice = true; errorProvider1.SetError(totalprice, "");
+            }
+            Boolean vfinishing = false;
+            if (string.IsNullOrWhiteSpace(finishing.Text) | finishing.Text.Length < 2)
+            {
+                vfinishing = false; type.Focus(); errorProvider1.SetError(finishing, "Finishing should be selected.");
+            }
+            else
+            {
+                vfinishing = true; errorProvider1.SetError(finishing, "");
+            }
+            Boolean vcompany = false;
+            if (string.IsNullOrWhiteSpace(company.Text) | company.Text.Length < 3)
+            {
+                vcompany = false; company.Focus(); errorProvider1.SetError(company,
+                    "Company name should contain atleast two character.");
+            }
+            else
+            {
+                vcompany = true; errorProvider1.SetError(company, "");
+            }
+            
+            if (vname == true & vtype == true & vfor == true & vlocation == true & varea == true & vpriceperhectar == true
+                & vtotalprice == true & vfinishing == true & vcompany == true )
+            {
+                string token = File.ReadAllText("token.txt");
+                HousesEndpointClient houseClient = new HousesEndpointClient();
+                housesUpdateRequestDto house = new housesUpdateRequestDto();
+                house.name = name.Text;
+                house.type = type.Text;
+                house.for_ = for_.Text;
+                house.location = location.Text;
+                house.area = area.Text;
+                house.priceperhectar = priceheactar.Text;
+                house.totalprice = totalprice.Text;
+                house.finishing = finishing.Text;
+                house.id = houseCurrentNow.id;
+                house.company = company.Text;
+                Console.WriteLine(" house id == " + houseCurrentNow.id+" "+ house.id);
+                responseDto response = houseClient.updateHouse(house, houseCurrentNow.id, token);
+                if (response.status == true)
+                {
+                    DialogResult result = MessageBox.Show(
+                        response.message, "Success", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    //if (result == DialogResult.OK)
+                    //{
+                        this.Hide();
+                        Dashboard userDb = new Dashboard();
+                        userDb.Show();
+                    //}
+                    //else
+                    //{
+
+                    //    DialogResult res = MessageBox.Show(response.message, "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop);
+                    //}
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show(
+                        response.message, "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

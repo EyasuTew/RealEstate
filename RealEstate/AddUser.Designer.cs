@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.username = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.confirmpassword = new System.Windows.Forms.TextBox();
@@ -47,6 +48,8 @@
             this.back = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // username
@@ -209,6 +212,10 @@
             this.label13.TabIndex = 28;
             this.label13.Text = "Sign Up";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +242,7 @@
             this.Controls.Add(this.username);
             this.Name = "AddUser";
             this.Text = "AddUser";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +269,6 @@
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

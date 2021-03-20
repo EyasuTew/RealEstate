@@ -22,35 +22,64 @@ namespace RealEstate
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserEndPointClient userEpc = new UserEndPointClient();
-            authDto authdto = new authDto();
-
-            authdto.username = userNameTB.Text;
-            authdto.password = passwordTB.Text;
-            authResponseDto response = userEpc.auth(authdto);
-        
-            Console.WriteLine(response.token);
-            if (response.status == false)
+            Boolean vuserNameTB = false;
+            Boolean vpasswordTB = false;
+            if (string.IsNullOrWhiteSpace(userNameTB.Text) | userNameTB.Text.Length<4)
             {
-                MessageBox.Show(response.message, "Signin error", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                vuserNameTB = false;
+                userNameTB.Focus();
+                errorProvider1.SetError(userNameTB, "User name should contain at least four character.");
             }
             else
             {
-                if (response.type == "admin")
+                vuserNameTB = true;
+                errorProvider1.SetError(userNameTB, "");
+            }
+            if (string.IsNullOrWhiteSpace(passwordTB.Text) | passwordTB.Text.Length < 4)
+            {
+                vpasswordTB = false;
+                userNameTB.Focus();
+                errorProvider1.SetError(passwordTB, "Paswword name should contain at least four character.");
+            }
+            else
+            {
+                vpasswordTB = true;
+                errorProvider1.SetError(passwordTB, "");
+            }
+
+            if (vuserNameTB == true & vpasswordTB == true)
+            {
+                
+                UserEndPointClient userEpc = new UserEndPointClient();
+                authDto authdto = new authDto();
+
+                authdto.username = userNameTB.Text;
+                authdto.password = passwordTB.Text;
+                authResponseDto response = userEpc.auth(authdto);
+
+                Console.WriteLine(response.token);
+                if (response.status == false)
                 {
-                    File.WriteAllText("token.txt", response.token);
-                    this.Hide();
-                    Admin ad = new Admin();
-                    ad.Show();
+                    MessageBox.Show(response.message, "Signin error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    File.WriteAllText("token.txt", response.token);
-                    Console.WriteLine("TOKEN  " + File.ReadAllText("token.txt"));
-                    this.Hide();
-                    Dashboard userDb = new Dashboard();
-                    userDb.Show();
+                    if (response.type == "admin")
+                    {
+                        File.WriteAllText("token.txt", response.token);
+                        this.Hide();
+                        Admin ad = new Admin();
+                        ad.Show();
+                    }
+                    else
+                    {
+                        File.WriteAllText("token.txt", response.token);
+                        Console.WriteLine("TOKEN  " + File.ReadAllText("token.txt"));
+                        this.Hide();
+                        Dashboard userDb = new Dashboard();
+                        userDb.Show();
+                    }
                 }
             }
         }

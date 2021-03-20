@@ -99,11 +99,11 @@ namespace RealEstate.HousesEndpoint {
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        RealEstate.HousesEndpoint.responseDto updateHouse(RealEstate.HousesEndpoint.housesUpdateRequestDto housesRequestDto, string token);
+        RealEstate.HousesEndpoint.responseDto updateHouse(RealEstate.HousesEndpoint.housesUpdateRequestDto housesRequestDto, long houseId, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> updateHouseAsync(RealEstate.HousesEndpoint.housesUpdateRequestDto housesRequestDto, string token);
+        System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> updateHouseAsync(RealEstate.HousesEndpoint.housesUpdateRequestDto housesRequestDto, long houseId, string token);
         
         // CODEGEN: Parameter 'photo' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -1848,12 +1848,12 @@ namespace RealEstate.HousesEndpoint {
             return base.Channel.changeHouseStatusAsync(houseId, token);
         }
         
-        public RealEstate.HousesEndpoint.responseDto updateHouse(RealEstate.HousesEndpoint.housesUpdateRequestDto housesRequestDto, string token) {
-            return base.Channel.updateHouse(housesRequestDto, token);
+        public RealEstate.HousesEndpoint.responseDto updateHouse(RealEstate.HousesEndpoint.housesUpdateRequestDto housesRequestDto, long houseId, string token) {
+            return base.Channel.updateHouse(housesRequestDto, houseId, token);
         }
         
-        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> updateHouseAsync(RealEstate.HousesEndpoint.housesUpdateRequestDto housesRequestDto, string token) {
-            return base.Channel.updateHouseAsync(housesRequestDto, token);
+        public System.Threading.Tasks.Task<RealEstate.HousesEndpoint.responseDto> updateHouseAsync(RealEstate.HousesEndpoint.housesUpdateRequestDto housesRequestDto, long houseId, string token) {
+            return base.Channel.updateHouseAsync(housesRequestDto, houseId, token);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

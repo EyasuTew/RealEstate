@@ -69,17 +69,17 @@ namespace RealEstate
                     labelName.AutoSize = true;
                     labelName.Location = new Point(x + dx, y);
                     labelName.Font = new Font(labelName.Font, FontStyle.Bold);
-                    labelName.Text = listHouse.housesDtoList[i].name + " " + listHouse.housesDtoList[i].type;
-                    // Create mail label
-                    var labelMail = new Label();
+                    labelName.Text = "Name: "+listHouse.housesDtoList[i].name + " Price: " + listHouse.housesDtoList[i].totalprice;
+                        // Create mail label
+                        var labelMail = new Label();
                     labelMail.AutoSize = true;
                     labelMail.Location = new Point(x + dx, y + labelName.Height);
-                    labelMail.Text = listHouse.housesDtoList[i].for_;
+                    labelMail.Text = "For: "+listHouse.housesDtoList[i].for_+" Location: "+ listHouse.housesDtoList[i].location+ " Area: " + listHouse.housesDtoList[i].area;
                     // Create phone label
                     var labelPhone = new Label();
                     labelPhone.AutoSize = true;
                     labelPhone.Location = new Point(x + dx, y + labelName.Height + labelMail.Height);
-                    labelPhone.Text = listHouse.housesDtoList[i].location;
+                    labelPhone.Text = "Area: "+listHouse.housesDtoList[i].area+" Price: "+ listHouse.housesDtoList[i].totalprice;
                     //
                     var btn = new Button();
                     btn.Text = "Detail";
@@ -168,17 +168,17 @@ namespace RealEstate
                     labelName.AutoSize = true;
                     labelName.Location = new Point(x + dx, y);
                     labelName.Font = new Font(labelName.Font, FontStyle.Bold);
-                    labelName.Text = listHouse.housesDtoList[i].name + " " + listHouse.housesDtoList[i].type;
+                    labelName.Text = "Name: " + listHouse.housesDtoList[i].name + " Price: " + listHouse.housesDtoList[i].totalprice;
                     // Create mail label
                     var labelMail = new Label();
                     labelMail.AutoSize = true;
                     labelMail.Location = new Point(x + dx, y + labelName.Height);
-                    labelMail.Text = listHouse.housesDtoList[i].for_;
+                    labelMail.Text = "For: " + listHouse.housesDtoList[i].for_ + " Location: " + listHouse.housesDtoList[i].location + " Area: " + listHouse.housesDtoList[i].area;
                     // Create phone label
                     var labelPhone = new Label();
                     labelPhone.AutoSize = true;
                     labelPhone.Location = new Point(x + dx, y + labelName.Height + labelMail.Height);
-                    labelPhone.Text = listHouse.housesDtoList[i].location;
+                    labelPhone.Text = "Area: "+listHouse.housesDtoList[i].area+" Price" + listHouse.housesDtoList[i].totalprice;
                     //
                     var btn = new Button();
                     btn.Text = "Detail";
@@ -259,12 +259,13 @@ namespace RealEstate
                     labelName.AutoSize = true;
                     labelName.Location = new Point(x + dx, y);
                     labelName.Font = new Font(labelName.Font, FontStyle.Bold);
-                    labelName.Text = listHouse.housesDtoList[i].name + " " + listHouse.housesDtoList[i].type;
+                    labelName.Text = "Name: " + listHouse.housesDtoList[i].name + " Price: " + listHouse.housesDtoList[i].totalprice;
                     // Create mail label
                     var labelMail = new Label();
                     labelMail.AutoSize = true;
                     labelMail.Location = new Point(x + dx, y + labelName.Height);
-                    labelMail.Text = listHouse.housesDtoList[i].for_;
+                    labelMail.Text = "For: " + listHouse.housesDtoList[i].for_ + " Location: " + listHouse.housesDtoList[i].location + " Area: " + listHouse.housesDtoList[i].area;
+
                     // Create phone label
                     var labelPhone = new Label();
                     labelPhone.AutoSize = true;
@@ -393,12 +394,13 @@ namespace RealEstate
                     labelName.AutoSize = true;
                     labelName.Location = new Point(x + dx, y);
                     labelName.Font = new Font(labelName.Font, FontStyle.Bold);
-                    labelName.Text = listHouse.housesDtoList[i].name + " " + listHouse.housesDtoList[i].type;
+                    labelName.Text = "Name: " + listHouse.housesDtoList[i].name + " Price: " + listHouse.housesDtoList[i].totalprice;
                     // Create mail label
                     var labelMail = new Label();
                     labelMail.AutoSize = true;
                     labelMail.Location = new Point(x + dx, y + labelName.Height);
-                    labelMail.Text = listHouse.housesDtoList[i].for_;
+                    labelMail.Text = "For: " + listHouse.housesDtoList[i].for_ + " Location: " + listHouse.housesDtoList[i].location + " Area: " + listHouse.housesDtoList[i].area;
+
                     // Create phone label
                     var labelPhone = new Label();
                     labelPhone.AutoSize = true;

@@ -166,6 +166,7 @@
   </wsdl:message>
   <wsdl:message name="updateHouse">
     <wsdl:part name="housesRequestDto" type="tns:housesUpdateRequestDto" />
+    <wsdl:part name="houseId" type="xsd:long" />
     <wsdl:part name="token" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="listAllResponse">
